@@ -1,0 +1,3094 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form name="matchdetail">
+	<fieldset>
+ 
+        <field
+            name="match_id"
+            type="hidden"
+            default="" />
+		<field
+            name="submitter_id"
+            type="hidden"
+            default="" />
+		<field
+            name="date_created"
+            type="hidden"
+            default="" />
+		
+		
+	</fieldset>	
+	<fieldset>
+	
+		<field
+            name="team1_score"
+            type="text"
+            label="COM_BLOODBOWL_SCORE"
+			description="COM_BLOODBOWL_SCORE_DESC"
+            required="true"
+			filter="integer" 
+			class="validate-numeric" 
+			maxlength="2"
+            size="2" />
+		<field
+            name="team2_score"
+            type="text"
+            label="COM_BLOODBOWL_SCORE"
+			description="COM_BLOODBOWL_SCORE_DESC"
+            required="true"
+			filter="integer" 
+			class="validate-numeric" 
+			maxlength="2"
+            size="2" />
+		
+		<field
+            name="income1"
+            type="text"
+            label="COM_BLOODBOWL_INCOME"
+			description="COM_BLOODBOWL_INCOME_DESC"
+            required="true"
+			filter="integer" 
+			class="validate-numeric" 
+			default="0"
+			maxlength="3"
+            size="3" />
+		<field
+            name="income2"
+            type="text"
+            label="COM_BLOODBOWL_INCOME"
+			description="COM_BLOODBOWL_INCOME_DESC"
+            required="true"
+			filter="integer" 
+			class="validate-numeric" 
+			default="0"
+			maxlength="3"
+            size="3" />
+		
+		<field
+            name="fame1"
+            type="text"
+            label="COM_BLOODBOWL_FAME"
+			description="COM_BLOODBOWL_FAME_DESC"
+            required="true"
+			filter="integer" 
+			class="validate-numeric" 
+			default="0"
+			maxlength="1"
+            size="2" />
+		<field
+            name="fame2"
+            type="text"
+            label="COM_BLOODBOWL_FAME"
+			description="COM_BLOODBOWL_FAME_DESC"
+            required="true"
+			filter="integer" 
+			class="validate-numeric" 
+			default="0"
+			maxlength="1"
+            size="2" />
+		
+		<field name="ffactor1" type="radio" default="0" label="COM_BLOODBOWL_FF" description="COM_BLOODBOWL_FF_DESC" required="true">
+			<option value="-1">-</option>
+			<option value="0">0</option>
+			<option value="1">+</option>
+		</field>
+		<field name="ffactor2" type="radio" default="0" label="COM_BLOODBOWL_FF" description="COM_BLOODBOWL_FF_DESC" required="true">
+			<option value="-1">- </option>
+			<option value="0">0 </option>
+			<option value="1">+ </option>
+		</field>
+		
+		<field
+            name="TV1"
+            type="hidden"
+            default="" />
+		<field
+            name="TV2"
+            type="hidden"
+            default="" />
+		
+		<field
+            name="spiral1"
+            type="hidden"
+            default="" />
+		<field
+            name="spiral2"
+            type="hidden"
+            default="" />
+		
+		<field
+            name="gate"
+            type="text"
+            label="COM_BLOODBOWL_GATE"
+			description="COM_BLOODBOWL_GATE_DESC"
+            required="true"
+			filter="integer" 
+			class="validate-numeric" 
+			default=""
+			maxlength="6"
+            size="5" />
+		
+		<field
+            name="date_played"
+            type="calendar"
+            label="COM_BLOODBOWL_DATE_PLAYED"
+			description="COM_BLOODBOWL_DATE_PLAYED_DESC"
+			default="NOW" />
+		
+		<field
+            name="date_created"
+            type="hidden"
+            label="COM_BLOODBOWL_DATE_CREATED"
+			description="COM_BLOODBOWL_DATE_CREATED_DESC"
+			default="" />
+		
+		<field
+            name="comment"
+            type="editor"
+            label="COM_BLOODBOWL_MATCH_SUMMARY"
+			description="COM_BLOODBOWL_MATCH_SUMMARY"
+            buttons="false" />
+		
+		
+	
+	</fieldset>
+	<fieldset>
+		<field
+            name="team1_id"
+            type="hidden"
+            label="COM_BLOODBOWL_TEAM_ID"
+            required="true"
+			filter="integer" 
+			class="validate-numeric" 
+			default="0" />
+		<field
+            name="team2_id"
+            type="hidden"
+            label="COM_BLOODBOWL_TEAM_ID"
+            required="true"
+			filter="integer" 
+			class="validate-numeric" 
+			default="0" />
+			
+			
+		<field
+            name="cp1_1"
+            type="text"
+            label="COM_BLOODBOWL_COMPLETIONS"
+			description="COM_BLOODBOWL_COMPLETIONS_DESC"
+            required="true"
+			filter="integer" 
+			class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="td1_1"
+            type="text"
+            label="COM_BLOODBOWL_TOUCHDOWNS"
+            required="true"
+			filter="integer" 
+			class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="intcpt1_1"
+            type="text"
+            label="COM_BLOODBOWL_INTERCEPTIONS"
+            required="true"
+			filter="integer" 
+			class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="bh1_1"
+            type="text"
+            label="COM_BLOODBOWL_BADLYHURTS"
+            required="true"
+			filter="integer" 
+			class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="si1_1"
+            type="text"
+            label="COM_BLOODBOWL_SERIOUSINJURIES"
+            required="true"
+			filter="integer" 
+			class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="ki1_1"
+            type="text"
+            label="COM_BLOODBOWL_KILLS"
+            required="true"
+			filter="integer" 
+			class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="inj1_1"
+            type="list"
+            label="COM_BLOODBOWL_INJURY"
+            default="NONE"
+			multiple="false" >
+			<option value="NONE">NONE</option>
+			<option value="MNG">MNG</option>
+			<option value="NI">NI</option>
+			<option value="MA">MA</option>
+			<option value="AV">AV</option>
+			<option value="AG">AG</option>
+			<option value="ST">ST</option>
+			<option value="DEAD">Dead</option>
+		</field>
+			
+		<field
+            name="playerid1_1"
+            type="hidden"
+            label="COM_BLOODBOWL_PLAYER_ID"
+            required="true"
+			filter="integer" 
+			class="validate-numeric" 
+			default="" />
+		
+		<field
+            name="cp1_2"
+            type="text"
+            label="COM_BLOODBOWL_COMPLETIONS"
+            required="true"
+			filter="integer" 
+			class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="td1_2"
+            type="text"
+            label="COM_BLOODBOWL_TOUCHDOWNS"
+            required="true"
+			filter="integer" 
+			class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="intcpt1_2"
+            type="text"
+            label="COM_BLOODBOWL_INTERCEPTIONS"
+            required="true"
+			filter="integer" 
+			class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="bh1_2"
+            type="text"
+            label="COM_BLOODBOWL_BADLYHURTS"
+            required="true"
+			filter="integer" 
+			class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="si1_2"
+            type="text"
+            label="COM_BLOODBOWL_SERIOUSINJURIES"
+            required="true"
+			filter="integer" 
+			class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="ki1_2"
+            type="text"
+            label="COM_BLOODBOWL_KILLS"
+            required="true"
+			filter="integer" 
+			class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="inj1_2"
+            type="list"
+            label="COM_BLOODBOWL_INJURY"
+            default="NONE"
+			multiple="false" >
+			<option value="NONE">NONE</option>
+			<option value="MNG">MNG</option>
+			<option value="NI">NI</option>
+			<option value="MA">MA</option>
+			<option value="AV">AV</option>
+			<option value="AG">AG</option>
+			<option value="ST">ST</option>
+			<option value="DEAD">Dead</option>
+		</field>
+			
+		<field
+            name="playerid1_2"
+            type="hidden"
+            label="COM_BLOODBOWL_PLAYER_ID"
+            required="true"
+			filter="integer" 
+			class="validate-numeric" 
+			default="" />
+		
+		<field
+            name="cp1_3"
+            type="text"
+            label="COM_BLOODBOWL_COMPLETIONS"
+            required="true"
+			filter="integer" 
+			class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="td1_3"
+            type="text"
+            label="COM_BLOODBOWL_TOUCHDOWNS"
+            required="true"
+			filter="integer" 
+			class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="intcpt1_3"
+            type="text"
+            label="COM_BLOODBOWL_INTERCEPTIONS"
+            required="true"
+			filter="integer" 
+			class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="bh1_3"
+            type="text"
+            label="COM_BLOODBOWL_BADLYHURTS"
+            required="true"
+			filter="integer" 
+			class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="si1_3"
+            type="text"
+            label="COM_BLOODBOWL_SERIOUSINJURIES"
+            required="true"
+			filter="integer" 
+			class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="ki1_3"
+            type="text"
+            label="COM_BLOODBOWL_KILLS"
+            required="true"
+			filter="integer" 
+			class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="inj1_3"
+            type="list"
+            label="COM_BLOODBOWL_INJURY"
+            default="NONE"
+			multiple="false" >
+			<option value="NONE">NONE</option>
+			<option value="MNG">MNG</option>
+			<option value="NI">NI</option>
+			<option value="MA">MA</option>
+			<option value="AV">AV</option>
+			<option value="AG">AG</option>
+			<option value="ST">ST</option>
+			<option value="DEAD">Dead</option>
+		</field>
+			
+		<field
+            name="playerid1_3"
+            type="hidden"
+            label="COM_BLOODBOWL_PLAYER_ID"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="" />
+		
+		<field
+            name="cp1_4"
+            type="text"
+            label="COM_BLOODBOWL_COMPLETIONS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="td1_4"
+            type="text"
+            label="COM_BLOODBOWL_TOUCHDOWNS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="intcpt1_4"
+            type="text"
+            label="COM_BLOODBOWL_INTERCEPTIONS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="bh1_4"
+            type="text"
+            label="COM_BLOODBOWL_BADLYHURTS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="si1_4"
+            type="text"
+            label="COM_BLOODBOWL_SERIOUSINJURIES"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="ki1_4"
+            type="text"
+            label="COM_BLOODBOWL_KILLS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="inj1_4"
+            type="list"
+            label="COM_BLOODBOWL_INJURY"
+            default="NONE"
+			multiple="false" >
+			<option value="NONE">NONE</option>
+			<option value="MNG">MNG</option>
+			<option value="NI">NI</option>
+			<option value="MA">MA</option>
+			<option value="AV">AV</option>
+			<option value="AG">AG</option>
+			<option value="ST">ST</option>
+			<option value="DEAD">Dead</option>
+		</field>
+			
+		<field
+            name="playerid1_4"
+            type="hidden"
+            label="COM_BLOODBOWL_PLAYER_ID"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="" />
+			
+		<field
+            name="cp1_5"
+            type="text"
+            label="COM_BLOODBOWL_COMPLETIONS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="td1_5"
+            type="text"
+            label="COM_BLOODBOWL_TOUCHDOWNS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="intcpt1_5"
+            type="text"
+            label="COM_BLOODBOWL_INTERCEPTIONS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="bh1_5"
+            type="text"
+            label="COM_BLOODBOWL_BADLYHURTS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="si1_5"
+            type="text"
+            label="COM_BLOODBOWL_SERIOUSINJURIES"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="ki1_5"
+            type="text"
+            label="COM_BLOODBOWL_KILLS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="inj1_5"
+            type="list"
+            label="COM_BLOODBOWL_INJURY"
+            default="NONE"
+			multiple="false" >
+			<option value="NONE">NONE</option>
+			<option value="MNG">MNG</option>
+			<option value="NI">NI</option>
+			<option value="MA">MA</option>
+			<option value="AV">AV</option>
+			<option value="AG">AG</option>
+			<option value="ST">ST</option>
+			<option value="DEAD">Dead</option>
+		</field>
+			
+		<field
+            name="playerid1_5"
+            type="hidden"
+            label="COM_BLOODBOWL_PLAYER_ID"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="" />
+			
+		<field
+            name="cp1_6"
+            type="text"
+            label="COM_BLOODBOWL_COMPLETIONS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="td1_6"
+            type="text"
+            label="COM_BLOODBOWL_TOUCHDOWNS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="intcpt1_6"
+            type="text"
+            label="COM_BLOODBOWL_INTERCEPTIONS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="bh1_6"
+            type="text"
+            label="COM_BLOODBOWL_BADLYHURTS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="si1_6"
+            type="text"
+            label="COM_BLOODBOWL_SERIOUSINJURIES"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="ki1_6"
+            type="text"
+            label="COM_BLOODBOWL_KILLS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="inj1_6"
+            type="list"
+            label="COM_BLOODBOWL_INJURY"
+            default="NONE"
+			multiple="false" >
+			<option value="NONE">NONE</option>
+			<option value="MNG">MNG</option>
+			<option value="NI">NI</option>
+			<option value="MA">MA</option>
+			<option value="AV">AV</option>
+			<option value="AG">AG</option>
+			<option value="ST">ST</option>
+			<option value="DEAD">Dead</option>
+		</field>
+			
+		<field
+            name="playerid1_6"
+            type="hidden"
+            label="COM_BLOODBOWL_PLAYER_ID"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="" />
+		
+		<field
+            name="cp1_7"
+            type="text"
+            label="COM_BLOODBOWL_COMPLETIONS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="td1_7"
+            type="text"
+            label="COM_BLOODBOWL_TOUCHDOWNS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="intcpt1_7"
+            type="text"
+            label="COM_BLOODBOWL_INTERCEPTIONS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="bh1_7"
+            type="text"
+            label="COM_BLOODBOWL_BADLYHURTS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="si1_7"
+            type="text"
+            label="COM_BLOODBOWL_SERIOUSINJURIES"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="ki1_7"
+            type="text"
+            label="COM_BLOODBOWL_KILLS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="inj1_7"
+            type="list"
+            label="COM_BLOODBOWL_INJURY"
+            default="NONE"
+			multiple="false" >
+			<option value="NONE">NONE</option>
+			<option value="MNG">MNG</option>
+			<option value="NI">NI</option>
+			<option value="MA">MA</option>
+			<option value="AV">AV</option>
+			<option value="AG">AG</option>
+			<option value="ST">ST</option>
+			<option value="DEAD">Dead</option>
+		</field>
+			
+		<field
+            name="playerid1_7"
+            type="hidden"
+            label="COM_BLOODBOWL_PLAYER_ID"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="" />
+		
+		<field
+            name="cp1_8"
+            type="text"
+            label="COM_BLOODBOWL_COMPLETIONS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="td1_8"
+            type="text"
+            label="COM_BLOODBOWL_TOUCHDOWNS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="intcpt1_8"
+            type="text"
+            label="COM_BLOODBOWL_INTERCEPTIONS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="bh1_8"
+            type="text"
+            label="COM_BLOODBOWL_BADLYHURTS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="si1_8"
+            type="text"
+            label="COM_BLOODBOWL_SERIOUSINJURIES"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="ki1_8"
+            type="text"
+            label="COM_BLOODBOWL_KILLS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="inj1_8"
+            type="list"
+            label="COM_BLOODBOWL_INJURY"
+            default="NONE"
+			multiple="false" >
+			<option value="NONE">NONE</option>
+			<option value="MNG">MNG</option>
+			<option value="NI">NI</option>
+			<option value="MA">MA</option>
+			<option value="AV">AV</option>
+			<option value="AG">AG</option>
+			<option value="ST">ST</option>
+			<option value="DEAD">Dead</option>
+		</field>
+			
+		<field
+            name="playerid1_8"
+            type="hidden"
+            label="COM_BLOODBOWL_PLAYER_ID"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="" />
+			
+		<field
+            name="cp1_9"
+            type="text"
+            label="COM_BLOODBOWL_COMPLETIONS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="td1_9"
+            type="text"
+            label="COM_BLOODBOWL_TOUCHDOWNS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="intcpt1_9"
+            type="text"
+            label="COM_BLOODBOWL_INTERCEPTIONS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="bh1_9"
+            type="text"
+            label="COM_BLOODBOWL_BADLYHURTS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="si1_9"
+            type="text"
+            label="COM_BLOODBOWL_SERIOUSINJURIES"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="ki1_9"
+            type="text"
+            label="COM_BLOODBOWL_KILLS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="inj1_9"
+            type="list"
+            label="COM_BLOODBOWL_INJURY"
+            default="NONE"
+			multiple="false" >
+			<option value="NONE">NONE</option>
+			<option value="MNG">MNG</option>
+			<option value="NI">NI</option>
+			<option value="MA">MA</option>
+			<option value="AV">AV</option>
+			<option value="AG">AG</option>
+			<option value="ST">ST</option>
+			<option value="DEAD">Dead</option>
+		</field>
+			
+		<field
+            name="playerid1_9"
+            type="hidden"
+            label="COM_BLOODBOWL_PLAYER_ID"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="" />
+			
+		<field
+            name="cp1_10"
+            type="text"
+            label="COM_BLOODBOWL_COMPLETIONS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="td1_10"
+            type="text"
+            label="COM_BLOODBOWL_TOUCHDOWNS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="intcpt1_10"
+            type="text"
+            label="COM_BLOODBOWL_INTERCEPTIONS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="bh1_10"
+            type="text"
+            label="COM_BLOODBOWL_BADLYHURTS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="si1_10"
+            type="text"
+            label="COM_BLOODBOWL_SERIOUSINJURIES"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="ki1_10"
+            type="text"
+            label="COM_BLOODBOWL_KILLS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="inj1_10"
+            type="list"
+            label="COM_BLOODBOWL_INJURY"
+            default="NONE"
+			multiple="false" >
+			<option value="NONE">NONE</option>
+			<option value="MNG">MNG</option>
+			<option value="NI">NI</option>
+			<option value="MA">MA</option>
+			<option value="AV">AV</option>
+			<option value="AG">AG</option>
+			<option value="ST">ST</option>
+			<option value="DEAD">Dead</option>
+		</field>
+			
+		<field
+            name="playerid1_10"
+            type="hidden"
+            label="COM_BLOODBOWL_PLAYER_ID"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="" />
+		
+		
+		<field
+            name="cp1_11"
+            type="text"
+            label="COM_BLOODBOWL_COMPLETIONS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="td1_11"
+            type="text"
+            label="COM_BLOODBOWL_TOUCHDOWNS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="intcpt1_11"
+            type="text"
+            label="COM_BLOODBOWL_INTERCEPTIONS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="bh1_11"
+            type="text"
+            label="COM_BLOODBOWL_BADLYHURTS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="si1_11"
+            type="text"
+            label="COM_BLOODBOWL_SERIOUSINJURIES"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="ki1_11"
+            type="text"
+            label="COM_BLOODBOWL_KILLS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="inj1_11"
+            type="list"
+            label="COM_BLOODBOWL_INJURY"
+            default="NONE"
+			multiple="false" >
+			<option value="NONE">NONE</option>
+			<option value="MNG">MNG</option>
+			<option value="NI">NI</option>
+			<option value="MA">MA</option>
+			<option value="AV">AV</option>
+			<option value="AG">AG</option>
+			<option value="ST">ST</option>
+			<option value="DEAD">Dead</option>
+		</field>
+			
+		<field
+            name="playerid1_11"
+            type="hidden"
+            label="COM_BLOODBOWL_PLAYER_ID"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="" />
+		
+		<field
+            name="cp1_12"
+            type="text"
+            label="COM_BLOODBOWL_COMPLETIONS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="td1_12"
+            type="text"
+            label="COM_BLOODBOWL_TOUCHDOWNS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="intcpt1_12"
+            type="text"
+            label="COM_BLOODBOWL_INTERCEPTIONS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="bh1_12"
+            type="text"
+            label="COM_BLOODBOWL_BADLYHURTS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="si1_12"
+            type="text"
+            label="COM_BLOODBOWL_SERIOUSINJURIES"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="ki1_12"
+            type="text"
+            label="COM_BLOODBOWL_KILLS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="inj1_12"
+            type="list"
+            label="COM_BLOODBOWL_INJURY"
+            default="NONE"
+			multiple="false" >
+			<option value="NONE">NONE</option>
+			<option value="MNG">MNG</option>
+			<option value="NI">NI</option>
+			<option value="MA">MA</option>
+			<option value="AV">AV</option>
+			<option value="AG">AG</option>
+			<option value="ST">ST</option>
+			<option value="DEAD">Dead</option>
+		</field>
+			
+		<field
+            name="playerid1_12"
+            type="hidden"
+            label="COM_BLOODBOWL_PLAYER_ID"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="" />
+		
+		<field
+            name="cp1_13"
+            type="text"
+            label="COM_BLOODBOWL_COMPLETIONS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="td1_13"
+            type="text"
+            label="COM_BLOODBOWL_TOUCHDOWNS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="intcpt1_13"
+            type="text"
+            label="COM_BLOODBOWL_INTERCEPTIONS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="bh1_13"
+            type="text"
+            label="COM_BLOODBOWL_BADLYHURTS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="si1_13"
+            type="text"
+            label="COM_BLOODBOWL_SERIOUSINJURIES"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="ki1_13"
+            type="text"
+            label="COM_BLOODBOWL_KILLS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="inj1_13"
+            type="list"
+            label="COM_BLOODBOWL_INJURY"
+            default="NONE"
+			multiple="false" >
+			<option value="NONE">NONE</option>
+			<option value="MNG">MNG</option>
+			<option value="NI">NI</option>
+			<option value="MA">MA</option>
+			<option value="AV">AV</option>
+			<option value="AG">AG</option>
+			<option value="ST">ST</option>
+			<option value="DEAD">Dead</option>
+		</field>
+			
+		<field
+            name="playerid1_13"
+            type="hidden"
+            label="COM_BLOODBOWL_PLAYER_ID"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="" />
+		
+		<field
+            name="cp1_14"
+            type="text"
+            label="COM_BLOODBOWL_COMPLETIONS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="td1_14"
+            type="text"
+            label="COM_BLOODBOWL_TOUCHDOWNS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="intcpt1_14"
+            type="text"
+            label="COM_BLOODBOWL_INTERCEPTIONS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="bh1_14"
+            type="text"
+            label="COM_BLOODBOWL_BADLYHURTS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="si1_14"
+            type="text"
+            label="COM_BLOODBOWL_SERIOUSINJURIES"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="ki1_14"
+            type="text"
+            label="COM_BLOODBOWL_KILLS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="inj1_14"
+            type="list"
+            label="COM_BLOODBOWL_INJURY"
+            default="NONE"
+			multiple="false" >
+			<option value="NONE">NONE</option>
+			<option value="MNG">MNG</option>
+			<option value="NI">NI</option>
+			<option value="MA">MA</option>
+			<option value="AV">AV</option>
+			<option value="AG">AG</option>
+			<option value="ST">ST</option>
+			<option value="DEAD">Dead</option>
+		</field>
+			
+		<field
+            name="playerid1_14"
+            type="hidden"
+            label="COM_BLOODBOWL_PLAYER_ID"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="" />
+			
+		<field
+            name="cp1_15"
+            type="text"
+            label="COM_BLOODBOWL_COMPLETIONS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="td1_15"
+            type="text"
+            label="COM_BLOODBOWL_TOUCHDOWNS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="intcpt1_15"
+            type="text"
+            label="COM_BLOODBOWL_INTERCEPTIONS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="bh1_15"
+            type="text"
+            label="COM_BLOODBOWL_BADLYHURTS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="si1_15"
+            type="text"
+            label="COM_BLOODBOWL_SERIOUSINJURIES"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="ki1_15"
+            type="text"
+            label="COM_BLOODBOWL_KILLS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="inj1_15"
+            type="list"
+            label="COM_BLOODBOWL_INJURY"
+            default="NONE"
+			multiple="false" >
+			<option value="NONE">NONE</option>
+			<option value="MNG">MNG</option>
+			<option value="NI">NI</option>
+			<option value="MA">MA</option>
+			<option value="AV">AV</option>
+			<option value="AG">AG</option>
+			<option value="ST">ST</option>
+			<option value="DEAD">Dead</option>
+		</field>
+			
+		<field
+            name="playerid1_15"
+            type="hidden"
+            label="COM_BLOODBOWL_PLAYER_ID"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="" />
+			
+		<field
+            name="cp1_16"
+            type="text"
+            label="COM_BLOODBOWL_COMPLETIONS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="td1_16"
+            type="text"
+            label="COM_BLOODBOWL_TOUCHDOWNS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="intcpt1_16"
+            type="text"
+            label="COM_BLOODBOWL_INTERCEPTIONS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="bh1_16"
+            type="text"
+            label="COM_BLOODBOWL_BADLYHURTS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="si1_16"
+            type="text"
+            label="COM_BLOODBOWL_SERIOUSINJURIES"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="ki1_16"
+            type="text"
+            label="COM_BLOODBOWL_KILLS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="inj1_16"
+            type="list"
+            label="COM_BLOODBOWL_INJURY"
+            default="NONE"
+			multiple="false" >
+			<option value="NONE">NONE</option>
+			<option value="MNG">MNG</option>
+			<option value="NI">NI</option>
+			<option value="MA">MA</option>
+			<option value="AV">AV</option>
+			<option value="AG">AG</option>
+			<option value="ST">ST</option>
+			<option value="DEAD">Dead</option>
+		</field>
+			
+		<field
+            name="playerid1_16"
+            type="hidden"
+            label="COM_BLOODBOWL_PLAYER_ID"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="" />
+		
+		<field
+            name="journey1_1"
+            type="checkbox"
+            label="COM_BLOODBOWL_JOURNEYMAN" 
+			value="1"
+			default="0" 
+             /> 
+ 
+        <field
+            name="journey1_2"
+            type="checkbox"
+            label="COM_BLOODBOWL_JOURNEYMAN" 
+			value="1"
+			default="0" 
+             /> 
+ 
+        <field
+            name="journey1_3"
+            type="checkbox"
+            label="COM_BLOODBOWL_JOURNEYMAN" 
+			value="1"
+			default="0" 
+             /> 
+ 
+        <field
+            name="journey1_4"
+            type="checkbox"
+            label="COM_BLOODBOWL_JOURNEYMAN" 
+			value="1"
+			default="0" 
+             /> 
+ 
+        <field
+            name="journey1_5"
+            type="checkbox"
+            label="COM_BLOODBOWL_JOURNEYMAN" 
+			value="1"
+			default="0" 
+             /> 
+ 
+        <field
+            name="journey1_6"
+            type="checkbox"
+            label="COM_BLOODBOWL_JOURNEYMAN" 
+			value="1"
+			default="0" 
+             /> 
+ 
+        <field
+            name="journey1_7"
+            type="checkbox"
+            label="COM_BLOODBOWL_JOURNEYMAN" 
+			value="1"
+			default="0" 
+             /> 
+ 
+        <field
+            name="journey1_8"
+            type="checkbox"
+            label="COM_BLOODBOWL_JOURNEYMAN" 
+			value="1"
+			default="0" 
+             /> 
+ 
+        <field
+            name="journey1_9"
+            type="checkbox"
+            label="COM_BLOODBOWL_JOURNEYMAN" 
+			value="1"
+			default="0" 
+             /> 
+ 
+        <field
+            name="journey1_10"
+            type="checkbox"
+            label="COM_BLOODBOWL_JOURNEYMAN" 
+			value="1"
+			default="0" 
+             /> 
+ 
+        <field
+            name="journey1_11"
+            type="checkbox"
+            label="COM_BLOODBOWL_JOURNEYMAN" 
+			value="1"
+			default="0" 
+             /> 
+ 
+        <field
+            name="journey1_12"
+            type="checkbox"
+            label="COM_BLOODBOWL_JOURNEYMAN" 
+			value="1"
+			default="0" 
+             /> 
+ 
+        <field
+            name="journey1_13"
+            type="checkbox"
+            label="COM_BLOODBOWL_JOURNEYMAN" 
+			value="1"
+			default="0" 
+             /> 
+ 
+        <field
+            name="journey1_14"
+            type="checkbox"
+            label="COM_BLOODBOWL_JOURNEYMAN" 
+			value="1"
+			default="0" 
+             /> 
+ 
+		<field
+            name="journey1_15"
+            type="checkbox"
+            label="COM_BLOODBOWL_JOURNEYMAN" 
+			value="1"
+			default="0" 
+             />
+
+        <field
+            name="journey1_16"
+            type="checkbox"
+            label="COM_BLOODBOWL_JOURNEYMAN" 
+			value="1"
+			default="0" 
+             />
+			 
+		
+		<field
+            name="cp2_1"
+            type="text"
+            label="COM_BLOODBOWL_COMPLETIONS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="td2_1"
+            type="text"
+            label="COM_BLOODBOWL_TOUCHDOWNS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="intcpt2_1"
+            type="text"
+            label="COM_BLOODBOWL_INTERCEPTIONS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="bh2_1"
+            type="text"
+            label="COM_BLOODBOWL_BADLYHURTS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="si2_1"
+            type="text"
+            label="COM_BLOODBOWL_SERIOUSINJURIES"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="ki2_1"
+            type="text"
+            label="COM_BLOODBOWL_KILLS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="inj2_1"
+            type="list"
+            label="COM_BLOODBOWL_INJURY"
+            default="NONE"
+			multiple="false" >
+			<option value="NONE">NONE</option>
+			<option value="MNG">MNG</option>
+			<option value="NI">NI</option>
+			<option value="MA">MA</option>
+			<option value="AV">AV</option>
+			<option value="AG">AG</option>
+			<option value="ST">ST</option>
+			<option value="DEAD">Dead</option>
+		</field>
+			
+		<field
+            name="playerid2_1"
+            type="hidden"
+            label="COM_BLOODBOWL_PLAYER_ID"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="" />
+		
+		<field
+            name="cp2_2"
+            type="text"
+            label="COM_BLOODBOWL_COMPLETIONS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="td2_2"
+            type="text"
+            label="COM_BLOODBOWL_TOUCHDOWNS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="intcpt2_2"
+            type="text"
+            label="COM_BLOODBOWL_INTERCEPTIONS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="bh2_2"
+            type="text"
+            label="COM_BLOODBOWL_BADLYHURTS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="si2_2"
+            type="text"
+            label="COM_BLOODBOWL_SERIOUSINJURIES"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="ki2_2"
+            type="text"
+            label="COM_BLOODBOWL_KILLS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="inj2_2"
+            type="list"
+            label="COM_BLOODBOWL_INJURY"
+            default="NONE"
+			multiple="false" >
+			<option value="NONE">NONE</option>
+			<option value="MNG">MNG</option>
+			<option value="NI">NI</option>
+			<option value="MA">MA</option>
+			<option value="AV">AV</option>
+			<option value="AG">AG</option>
+			<option value="ST">ST</option>
+			<option value="DEAD">Dead</option>
+		</field>
+			
+		<field
+            name="playerid2_2"
+            type="hidden"
+            label="COM_BLOODBOWL_PLAYER_ID"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="" />
+		
+		<field
+            name="cp2_3"
+            type="text"
+            label="COM_BLOODBOWL_COMPLETIONS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="td2_3"
+            type="text"
+            label="COM_BLOODBOWL_TOUCHDOWNS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="intcpt2_3"
+            type="text"
+            label="COM_BLOODBOWL_INTERCEPTIONS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="bh2_3"
+            type="text"
+            label="COM_BLOODBOWL_BADLYHURTS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="si2_3"
+            type="text"
+            label="COM_BLOODBOWL_SERIOUSINJURIES"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="ki2_3"
+            type="text"
+            label="COM_BLOODBOWL_KILLS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="inj2_3"
+            type="list"
+            label="COM_BLOODBOWL_INJURY"
+            default="NONE"
+			multiple="false" >
+			<option value="NONE">NONE</option>
+			<option value="MNG">MNG</option>
+			<option value="NI">NI</option>
+			<option value="MA">MA</option>
+			<option value="AV">AV</option>
+			<option value="AG">AG</option>
+			<option value="ST">ST</option>
+			<option value="DEAD">Dead</option>
+		</field>
+			
+		<field
+            name="playerid2_3"
+            type="hidden"
+            label="COM_BLOODBOWL_PLAYER_ID"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="" />
+		
+		<field
+            name="cp2_4"
+            type="text"
+            label="COM_BLOODBOWL_COMPLETIONS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="td2_4"
+            type="text"
+            label="COM_BLOODBOWL_TOUCHDOWNS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="intcpt2_4"
+            type="text"
+            label="COM_BLOODBOWL_INTERCEPTIONS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="bh2_4"
+            type="text"
+            label="COM_BLOODBOWL_BADLYHURTS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="si2_4"
+            type="text"
+            label="COM_BLOODBOWL_SERIOUSINJURIES"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="ki2_4"
+            type="text"
+            label="COM_BLOODBOWL_KILLS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="inj2_4"
+            type="list"
+            label="COM_BLOODBOWL_INJURY"
+            default="NONE"
+			multiple="false" >
+			<option value="NONE">NONE</option>
+			<option value="MNG">MNG</option>
+			<option value="NI">NI</option>
+			<option value="MA">MA</option>
+			<option value="AV">AV</option>
+			<option value="AG">AG</option>
+			<option value="ST">ST</option>
+			<option value="DEAD">Dead</option>
+		</field>
+			
+		<field
+            name="playerid2_4"
+            type="hidden"
+            label="COM_BLOODBOWL_PLAYER_ID"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="" />
+			
+		<field
+            name="cp2_5"
+            type="text"
+            label="COM_BLOODBOWL_COMPLETIONS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="td2_5"
+            type="text"
+            label="COM_BLOODBOWL_TOUCHDOWNS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="intcpt2_5"
+            type="text"
+            label="COM_BLOODBOWL_INTERCEPTIONS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="bh2_5"
+            type="text"
+            label="COM_BLOODBOWL_BADLYHURTS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="si2_5"
+            type="text"
+            label="COM_BLOODBOWL_SERIOUSINJURIES"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="ki2_5"
+            type="text"
+            label="COM_BLOODBOWL_KILLS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="inj2_5"
+            type="list"
+            label="COM_BLOODBOWL_INJURY"
+            default="NONE"
+			multiple="false" >
+			<option value="NONE">NONE</option>
+			<option value="MNG">MNG</option>
+			<option value="NI">NI</option>
+			<option value="MA">MA</option>
+			<option value="AV">AV</option>
+			<option value="AG">AG</option>
+			<option value="ST">ST</option>
+			<option value="DEAD">Dead</option>
+		</field>
+			
+		<field
+            name="playerid2_5"
+            type="hidden"
+            label="COM_BLOODBOWL_PLAYER_ID"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="" />
+			
+		<field
+            name="cp2_6"
+            type="text"
+            label="COM_BLOODBOWL_COMPLETIONS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="td2_6"
+            type="text"
+            label="COM_BLOODBOWL_TOUCHDOWNS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="intcpt2_6"
+            type="text"
+            label="COM_BLOODBOWL_INTERCEPTIONS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="bh2_6"
+            type="text"
+            label="COM_BLOODBOWL_BADLYHURTS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="si2_6"
+            type="text"
+            label="COM_BLOODBOWL_SERIOUSINJURIES"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="ki2_6"
+            type="text"
+            label="COM_BLOODBOWL_KILLS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="inj2_6"
+            type="list"
+            label="COM_BLOODBOWL_INJURY"
+            default="NONE"
+			multiple="false" >
+			<option value="NONE">NONE</option>
+			<option value="MNG">MNG</option>
+			<option value="NI">NI</option>
+			<option value="MA">MA</option>
+			<option value="AV">AV</option>
+			<option value="AG">AG</option>
+			<option value="ST">ST</option>
+			<option value="DEAD">Dead</option>
+		</field>
+			
+		<field
+            name="playerid2_6"
+            type="hidden"
+            label="COM_BLOODBOWL_PLAYER_ID"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="" />
+		
+		<field
+            name="cp2_7"
+            type="text"
+            label="COM_BLOODBOWL_COMPLETIONS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="td2_7"
+            type="text"
+            label="COM_BLOODBOWL_TOUCHDOWNS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="intcpt2_7"
+            type="text"
+            label="COM_BLOODBOWL_INTERCEPTIONS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="bh2_7"
+            type="text"
+            label="COM_BLOODBOWL_BADLYHURTS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="si2_7"
+            type="text"
+            label="COM_BLOODBOWL_SERIOUSINJURIES"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="ki2_7"
+            type="text"
+            label="COM_BLOODBOWL_KILLS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="inj2_7"
+            type="list"
+            label="COM_BLOODBOWL_INJURY"
+            default="NONE"
+			multiple="false" >
+			<option value="NONE">NONE</option>
+			<option value="MNG">MNG</option>
+			<option value="NI">NI</option>
+			<option value="MA">MA</option>
+			<option value="AV">AV</option>
+			<option value="AG">AG</option>
+			<option value="ST">ST</option>
+			<option value="DEAD">Dead</option>
+		</field>
+			
+		<field
+            name="playerid2_7"
+            type="hidden"
+            label="COM_BLOODBOWL_PLAYER_ID"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="" />
+		
+		<field
+            name="cp2_8"
+            type="text"
+            label="COM_BLOODBOWL_COMPLETIONS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="td2_8"
+            type="text"
+            label="COM_BLOODBOWL_TOUCHDOWNS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="intcpt2_8"
+            type="text"
+            label="COM_BLOODBOWL_INTERCEPTIONS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="bh2_8"
+            type="text"
+            label="COM_BLOODBOWL_BADLYHURTS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="si2_8"
+            type="text"
+            label="COM_BLOODBOWL_SERIOUSINJURIES"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="ki2_8"
+            type="text"
+            label="COM_BLOODBOWL_KILLS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="inj2_8"
+            type="list"
+            label="COM_BLOODBOWL_INJURY"
+            default="NONE"
+			multiple="false" >
+			<option value="NONE">NONE</option>
+			<option value="MNG">MNG</option>
+			<option value="NI">NI</option>
+			<option value="MA">MA</option>
+			<option value="AV">AV</option>
+			<option value="AG">AG</option>
+			<option value="ST">ST</option>
+			<option value="DEAD">Dead</option>
+		</field>
+			
+		<field
+            name="playerid2_8"
+            type="hidden"
+            label="COM_BLOODBOWL_PLAYER_ID"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="" />
+			
+		<field
+            name="cp2_9"
+            type="text"
+            label="COM_BLOODBOWL_COMPLETIONS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="td2_9"
+            type="text"
+            label="COM_BLOODBOWL_TOUCHDOWNS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="intcpt2_9"
+            type="text"
+            label="COM_BLOODBOWL_INTERCEPTIONS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="bh2_9"
+            type="text"
+            label="COM_BLOODBOWL_BADLYHURTS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="si2_9"
+            type="text"
+            label="COM_BLOODBOWL_SERIOUSINJURIES"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="ki2_9"
+            type="text"
+            label="COM_BLOODBOWL_KILLS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="inj2_9"
+            type="list"
+            label="COM_BLOODBOWL_INJURY"
+            default="NONE"
+			multiple="false" >
+			<option value="NONE">NONE</option>
+			<option value="MNG">MNG</option>
+			<option value="NI">NI</option>
+			<option value="MA">MA</option>
+			<option value="AV">AV</option>
+			<option value="AG">AG</option>
+			<option value="ST">ST</option>
+			<option value="DEAD">Dead</option>
+		</field>
+			
+		<field
+            name="playerid2_9"
+            type="hidden"
+            label="COM_BLOODBOWL_PLAYER_ID"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="" />
+			
+		<field
+            name="cp2_10"
+            type="text"
+            label="COM_BLOODBOWL_COMPLETIONS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="td2_10"
+            type="text"
+            label="COM_BLOODBOWL_TOUCHDOWNS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="intcpt2_10"
+            type="text"
+            label="COM_BLOODBOWL_INTERCEPTIONS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="bh2_10"
+            type="text"
+            label="COM_BLOODBOWL_BADLYHURTS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="si2_10"
+            type="text"
+            label="COM_BLOODBOWL_SERIOUSINJURIES"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="ki2_10"
+            type="text"
+            label="COM_BLOODBOWL_KILLS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="inj2_10"
+            type="list"
+            label="COM_BLOODBOWL_INJURY"
+            default="NONE"
+			multiple="false" >
+			<option value="NONE">NONE</option>
+			<option value="MNG">MNG</option>
+			<option value="NI">NI</option>
+			<option value="MA">MA</option>
+			<option value="AV">AV</option>
+			<option value="AG">AG</option>
+			<option value="ST">ST</option>
+			<option value="DEAD">Dead</option>
+		</field>
+			
+		<field
+            name="playerid2_10"
+            type="hidden"
+            label="COM_BLOODBOWL_PLAYER_ID"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="" />
+		
+		
+		<field
+            name="cp2_11"
+            type="text"
+            label="COM_BLOODBOWL_COMPLETIONS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="td2_11"
+            type="text"
+            label="COM_BLOODBOWL_TOUCHDOWNS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="intcpt2_11"
+            type="text"
+            label="COM_BLOODBOWL_INTERCEPTIONS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="bh2_11"
+            type="text"
+            label="COM_BLOODBOWL_BADLYHURTS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="si2_11"
+            type="text"
+            label="COM_BLOODBOWL_SERIOUSINJURIES"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="ki2_11"
+            type="text"
+            label="COM_BLOODBOWL_KILLS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="inj2_11"
+            type="list"
+            label="COM_BLOODBOWL_INJURY"
+            default="NONE"
+			multiple="false" >
+			<option value="NONE">NONE</option>
+			<option value="MNG">MNG</option>
+			<option value="NI">NI</option>
+			<option value="MA">MA</option>
+			<option value="AV">AV</option>
+			<option value="AG">AG</option>
+			<option value="ST">ST</option>
+			<option value="DEAD">Dead</option>
+		</field>
+			
+		<field
+            name="playerid2_11"
+            type="hidden"
+            label="COM_BLOODBOWL_PLAYER_ID"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="" />
+		
+		<field
+            name="cp2_12"
+            type="text"
+            label="COM_BLOODBOWL_COMPLETIONS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="td2_12"
+            type="text"
+            label="COM_BLOODBOWL_TOUCHDOWNS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="intcpt2_12"
+            type="text"
+            label="COM_BLOODBOWL_INTERCEPTIONS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="bh2_12"
+            type="text"
+            label="COM_BLOODBOWL_BADLYHURTS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="si2_12"
+            type="text"
+            label="COM_BLOODBOWL_SERIOUSINJURIES"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="ki2_12"
+            type="text"
+            label="COM_BLOODBOWL_KILLS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="inj2_12"
+            type="list"
+            label="COM_BLOODBOWL_INJURY"
+            default="NONE"
+			multiple="false" >
+			<option value="NONE">NONE</option>
+			<option value="MNG">MNG</option>
+			<option value="NI">NI</option>
+			<option value="MA">MA</option>
+			<option value="AV">AV</option>
+			<option value="AG">AG</option>
+			<option value="ST">ST</option>
+			<option value="DEAD">Dead</option>
+		</field>
+			
+		<field
+            name="playerid2_12"
+            type="hidden"
+            label="COM_BLOODBOWL_PLAYER_ID"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="" />
+		
+		<field
+            name="cp2_13"
+            type="text"
+            label="COM_BLOODBOWL_COMPLETIONS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="td2_13"
+            type="text"
+            label="COM_BLOODBOWL_TOUCHDOWNS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="intcpt2_13"
+            type="text"
+            label="COM_BLOODBOWL_INTERCEPTIONS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="bh2_13"
+            type="text"
+            label="COM_BLOODBOWL_BADLYHURTS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="si2_13"
+            type="text"
+            label="COM_BLOODBOWL_SERIOUSINJURIES"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="ki2_13"
+            type="text"
+            label="COM_BLOODBOWL_KILLS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="inj2_13"
+            type="list"
+            label="COM_BLOODBOWL_INJURY"
+            default="NONE"
+			multiple="false" >
+			<option value="NONE">NONE</option>
+			<option value="MNG">MNG</option>
+			<option value="NI">NI</option>
+			<option value="MA">MA</option>
+			<option value="AV">AV</option>
+			<option value="AG">AG</option>
+			<option value="ST">ST</option>
+			<option value="DEAD">Dead</option>
+		</field>
+			
+		<field
+            name="playerid2_13"
+            type="hidden"
+            label="COM_BLOODBOWL_PLAYER_ID"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="" />
+		
+		<field
+            name="cp2_14"
+            type="text"
+            label="COM_BLOODBOWL_COMPLETIONS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="td2_14"
+            type="text"
+            label="COM_BLOODBOWL_TOUCHDOWNS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="intcpt2_14"
+            type="text"
+            label="COM_BLOODBOWL_INTERCEPTIONS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="bh2_14"
+            type="text"
+            label="COM_BLOODBOWL_BADLYHURTS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="si2_14"
+            type="text"
+            label="COM_BLOODBOWL_SERIOUSINJURIES"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="ki2_14"
+            type="text"
+            label="COM_BLOODBOWL_KILLS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="inj2_14"
+            type="list"
+            label="COM_BLOODBOWL_INJURY"
+            default="NONE"
+			multiple="false" >
+			<option value="NONE">NONE</option>
+			<option value="MNG">MNG</option>
+			<option value="NI">NI</option>
+			<option value="MA">MA</option>
+			<option value="AV">AV</option>
+			<option value="AG">AG</option>
+			<option value="ST">ST</option>
+			<option value="DEAD">Dead</option>
+		</field>
+			
+		<field
+            name="playerid2_14"
+            type="hidden"
+            label="COM_BLOODBOWL_PLAYER_ID"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="" />
+			
+		<field
+            name="cp2_15"
+            type="text"
+            label="COM_BLOODBOWL_COMPLETIONS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="td2_15"
+            type="text"
+            label="COM_BLOODBOWL_TOUCHDOWNS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="intcpt2_15"
+            type="text"
+            label="COM_BLOODBOWL_INTERCEPTIONS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="bh2_15"
+            type="text"
+            label="COM_BLOODBOWL_BADLYHURTS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="si2_15"
+            type="text"
+            label="COM_BLOODBOWL_SERIOUSINJURIES"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="ki2_15"
+            type="text"
+            label="COM_BLOODBOWL_KILLS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="inj2_15"
+            type="list"
+            label="COM_BLOODBOWL_INJURY"
+            default="NONE"
+			multiple="false" >
+			<option value="NONE">NONE</option>
+			<option value="MNG">MNG</option>
+			<option value="NI">NI</option>
+			<option value="MA">MA</option>
+			<option value="AV">AV</option>
+			<option value="AG">AG</option>
+			<option value="ST">ST</option>
+			<option value="DEAD">Dead</option>
+		</field>
+			
+		<field
+            name="playerid2_15"
+            type="hidden"
+            label="COM_BLOODBOWL_PLAYER_ID"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="" />
+			
+		<field
+            name="cp2_16"
+            type="text"
+            label="COM_BLOODBOWL_COMPLETIONS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="td2_16"
+            type="text"
+            label="COM_BLOODBOWL_TOUCHDOWNS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="intcpt2_16"
+            type="text"
+            label="COM_BLOODBOWL_INTERCEPTIONS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="bh2_16"
+            type="text"
+            label="COM_BLOODBOWL_BADLYHURTS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="si2_16"
+            type="text"
+            label="COM_BLOODBOWL_SERIOUSINJURIES"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="ki2_16"
+            type="text"
+            label="COM_BLOODBOWL_KILLS"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="0"
+			maxlength="2"
+            size="1" />
+		
+		<field
+            name="inj2_16"
+            type="list"
+            label="COM_BLOODBOWL_INJURY"
+            default="NONE"
+			multiple="false" >
+			<option value="NONE">NONE</option>
+			<option value="MNG">MNG</option>
+			<option value="NI">NI</option>
+			<option value="MA">MA</option>
+			<option value="AV">AV</option>
+			<option value="AG">AG</option>
+			<option value="ST">ST</option>
+			<option value="DEAD">Dead</option>
+		</field>
+			
+		<field
+            name="playerid2_16"
+            type="hidden"
+            label="COM_BLOODBOWL_PLAYER_ID"
+            required="true"
+			filter="integer" class="validate-numeric" 
+			default="" />
+		
+		<field
+			name="journey2_1"
+			type="checkbox"
+			label="COM_BLOODBOWL_JOURNEYMAN" value="1" default="0" />
+ 
+		<field
+			name="journey2_2"
+			type="checkbox"
+			label="COM_BLOODBOWL_JOURNEYMAN" value="1" default="0" />
+ 
+		<field
+			name="journey2_3"
+			type="checkbox"
+			label="COM_BLOODBOWL_JOURNEYMAN" value="1" default="0" />
+ 
+		<field
+			name="journey2_4"
+			type="checkbox"
+			label="COM_BLOODBOWL_JOURNEYMAN" value="1" default="0" />
+ 
+		<field
+			name="journey2_5"
+			type="checkbox"
+			label="COM_BLOODBOWL_JOURNEYMAN" value="1" default="0" />
+ 
+		<field
+			name="journey2_6"
+			type="checkbox"
+			label="COM_BLOODBOWL_JOURNEYMAN" value="1" default="0" />
+ 
+		<field
+			name="journey2_7"
+			type="checkbox"
+			label="COM_BLOODBOWL_JOURNEYMAN" value="1" default="0" />
+ 
+		<field
+			name="journey2_8"
+			type="checkbox"
+			label="COM_BLOODBOWL_JOURNEYMAN" value="1" default="0" />
+ 
+		<field
+			name="journey2_9"
+			type="checkbox"
+			label="COM_BLOODBOWL_JOURNEYMAN" value="1" default="0" />
+ 
+		<field
+			name="journey2_10"
+			type="checkbox"
+			label="COM_BLOODBOWL_JOURNEYMAN" value="1" default="0" />
+ 
+		<field
+			name="journey2_11"
+			type="checkbox"
+			label="COM_BLOODBOWL_JOURNEYMAN" value="1" default="0" />
+ 
+		<field
+			name="journey2_12"
+			type="checkbox"
+			label="COM_BLOODBOWL_JOURNEYMAN" value="1" default="0" />
+ 
+		<field
+			name="journey2_13"
+			type="checkbox"
+			label="COM_BLOODBOWL_JOURNEYMAN" value="1" default="0" />
+ 
+		<field
+			name="journey2_14"
+			type="checkbox"
+			label="COM_BLOODBOWL_JOURNEYMAN" value="1" default="0" />
+ 
+		<field
+			name="journey2_15"
+			type="checkbox"
+			label="COM_BLOODBOWL_JOURNEYMAN" value="1" default="0" />
+ 
+		<field
+			name="journey2_16"
+			type="checkbox"
+			label="COM_BLOODBOWL_JOURNEYMAN" value="1" default="0" />
+	</fieldset>
+	
+</form>

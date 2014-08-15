@@ -1,0 +1,61 @@
+#info dl {
+  clear:both;
+  width:90%;
+  height:8em;
+  margin:2em auto;
+}
+#info dt {
+  margin-bottom:1em; 
+  font-weight:bold;
+}
+#info dd {
+  float:left; 
+  margin:0;
+}
+ 
+#info ul.first {
+  counter-reset:item 0;
+  list-style-type: none;
+}
+#info ul.second {
+	counter-reset:item 5;
+	line-height: 3.1em;
+	list-style-type: none;
+}
+#info ul.third {
+	counter-reset:item 9;
+	list-style-type: none;
+	line-height: 6.2em;
+}
+ 
+#info ul li {
+	display: block;
+}
+#info ul li:before {
+  content: counter(item) ". "; 
+  counter-increment: item 1;
+}
+.bgA,  .odd{
+	background-color: WhiteSmoke;
+}
+.bgB, .even{
+	background-color: #FEE6BC;
+}
+
+#loser {
+	text-decoration: line-through;
+}
+#top li {
+	
+}
+#bot li {
+	margin-bottom: 1em; 
+	padding-bottom: 1em; 
+}
+
+td.arrow {
+	padding: 0;
+	margin: 0;
+	border-spacing: 0px;
+    border-collapse: collapse;
+}

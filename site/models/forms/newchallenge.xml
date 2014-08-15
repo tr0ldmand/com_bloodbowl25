@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form name="newchallenge">
+	<fieldset>
+
+        <field
+            name="coach_id"
+            type="hidden"
+            default="0" />
+		<field
+            name="tour_id"
+            type="hidden"
+            default="0" />
+		<field
+            name="teamA"
+            type="hidden"
+            default="0" />
+		<field
+            name="teamB"
+            type="hidden"
+            default="0" />
+		
+		
+	</fieldset>	
+</form>

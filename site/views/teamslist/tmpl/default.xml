@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+        <layout title="COM_BLOODBOWL_TEAMSLIST">
+                <message>COM_BLOODBOWL_TEAMSLIST_DESC</message>
+        </layout>
+		<fields name="request">
+                <fieldset name="request">
+                        <field
+                                name="show"
+                                type="list"
+                                label="COM_BLOODBOWL_TEAMSLIST_WHICH"
+                                description="COM_BLOODBOWL_TEAMSLIST_WHICH_DESC"
+                                default="-1"
+                        >
+                                <option value="0">All teams</option>
+                                <option value="-1">Own teams</option>
+                        </field>
+                </fieldset>
+        </fields>
+</metadata>

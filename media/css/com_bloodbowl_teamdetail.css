@@ -1,0 +1,27 @@
+.bgA,  .odd{
+	background-color: WhiteSmoke;
+}
+.bgB, .even{
+	background-color: #FEE6BC;
+}
+
+table.teamdetail  td{
+	font-size: 0.85em;
+	margin: 0px;
+	border-spacing: 0px;
+	border-collapse: collapse;
+	padding: 1px 1px 1px 3px;
+}
+
+table.teamdetail  th{
+	padding: 3px 5px;
+}
+
+input.invalid {
+	background-color: pink !important;
+	border-style: inlet;
+}
+
+.mng {
+	text-decoration: line-through;
+}

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form name="challenge">
+	<fieldset>
+ 
+        <field
+            name="race"
+            type="sql"
+            multiple="false"
+            size="1"
+            label="COM_BLOODBOWL_RACE"
+            description="COM_BLOODBOWL_RACE_DESC"
+            query="SELECT id AS value, name AS race FROM #__bb_teams WHERE coach=0 ORDER BY name"
+            default="0"
+            required="true"
+            >
+                <option value="0">COM_BLOODBOWL_RACE</option>
+        </field>
+ 
+		<field
+            name="submitter_id"
+            type="hidden"
+            default="" />
+
+		<field
+            name="name"
+            type="text"
+			label="COM_BLOODBOWL_TEAM_NAME"
+			filter="safehtml"
+			required="true"
+            default="" />
+		
+		<field
+            name="startval"
+            type="text"
+			label="COM_BLOODBOWL_STARTVAL"
+			description="COM_BLOODBOWL_STARTVAL_DESC"
+			required="true"
+			class="validate-numeric"
+			filter="int"
+			size="6"
+            default="1000000" />
+		
+	</fieldset>	
+</form>

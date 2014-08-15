@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form name="challenge">
+	<fieldset>
+ 
+        <field
+            name="id"
+            type="sql"
+            multiple="false"
+            size="1"
+            label="COM_BLOODBOWL_SKILLS"
+            description="COM_BLOODBOWL_SKILLS_DESC"
+            query="select id, name from #__bb_skills"
+            key_field="id"
+            value_field="name"
+            default="1"
+            required="true"
+            >
+                <option value="">JOPTION_SELECT_ID</option>
+        </field>
+ 
+        <field
+            name="match_id"
+            type="hidden"
+            default="" />
+		<field
+            name="submitter_id"
+            type="hidden"
+            default="" />
+		<field
+            name="date_created"
+            type="hidden"
+            default="" />
+		
+		
+	</fieldset>	
+</form>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form name="tourneyadmin">
+	<fieldset>
+ 
+        <field
+            name="tour_id"
+            type="hidden"
+            default="" />
+		<field
+            name="submitter_id"
+            type="hidden"
+            default="" />
+			
+		<field
+            name="tours"
+            type="list"
+			label="COM_BLOODBOWL_ADD_TOURNEY"
+			multiple="true"
+            default="0" >
+			<option value="0">COM_BLOODBOWL_ADD_TOURNEY</option>
+		</field>
+			
+		<field
+            name="teams"
+            type="list"
+			label="COM_BLOODBOWL_ADD_TEAMS"
+			multiple="true"
+            default="0" >
+			<option value="0">COM_BLOODBOWL_ADD_TEAMS</option>
+		</field>
+		
+		<field
+            name="match1"
+            type="list"
+			label="COM_BLOODBOWL_HOME_TEAM"
+            default="0" >
+			<option value="0">COM_BLOODBOWL_HOME_TEAM</option>
+		</field>
+		
+		<field
+            name="match2"
+            type="list"
+			label="COM_BLOODBOWL_AWAY_TEAM"
+            default="0" >
+			<option value="0">COM_BLOODBOWL_AWAY_TEAM</option>
+		</field>
+		
+		<field
+            name="news"
+            type="editor"
+			label="COM_BLOODBOWL_NEWS"
+			buttons="false"
+			filter="safehtml"
+             />
+			 
+		<field
+            name="rules"
+            type="editor"
+			label="COM_BLOODBOWL_RULES"
+			buttons="false"
+			filter="safehtml"
+             />
+		
+		
+		
+	</fieldset>	
+</form>

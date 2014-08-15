@@ -1,0 +1,49 @@
+.bgA,  .odd{
+	background-color: WhiteSmoke;
+}
+.bgB, .even{
+	background-color: #FEE6BC;
+}
+
+table.teamdetail  td{
+	font-size: 0.85em;
+	margin: 0px;
+	border-spacing: 0px;
+	border-collapse: collapse;
+	padding: 1px 1px 1px 3px;
+}
+
+table.teamdetail  th{
+	padding: 3px 5px;
+}
+
+input.invalid {
+	background-color: pink !important;
+	border-style: inlet;
+}
+
+.mng {
+	text-decoration: line-through;
+}
+
+fieldset.touradmin {
+	float: left;
+	border: 1px solid;
+	padding: 2em;
+	margin: 1em;
+}
+
+fieldset.newteam {
+	border: 1px solid;
+	padding: 2em;
+	margin: 1em;
+}
+
+.bbtopmenu {
+	float: top;
+	text-align: center;
+	background-color: #FEE6BC;
+	border: 1px solid;
+	padding: 0.5em;
+	margin: 1.5em;
+}

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form name="challenge">
+	<fieldset>
+
+        <field
+            name="match_id"
+            type="hidden"
+            default="" />
+		<field
+            name="teamA"
+            type="hidden"
+            default="" />
+		<field
+            name="teamB"
+            type="hidden"
+            default="" />
+		
+		
+	</fieldset>	
+</form>

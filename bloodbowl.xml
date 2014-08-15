@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="2.5.0" method="upgrade">
+ 
+        <name>BloodBowl</name>
+        <!-- The following elements are optional and free of formatting constraints -->
+        <creationDate>September 2013</creationDate>
+        <author>André Samuelsen</author>
+        <authorEmail>andre@trc.dk</authorEmail>
+        <authorUrl>http://www.trc.dk</authorUrl>
+        <copyright>(C) 2013 André Samuelsen</copyright>
+        <!--  The version string is stored in the components table -->
+        <version>0.9.0</version>
+        <!-- The description is optional and defaults to the name -->
+        <description>Component for managing our local BloodBowl League.</description>
+		
+		<install> <!-- Runs on install -->
+                <sql>
+                        <file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+                </sql>
+        </install>
+        <uninstall> <!-- Runs on uninstall -->
+                <sql>
+                        <file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+                </sql>
+        </uninstall>
+        <update> <!-- Runs on update; New in 2.5 -->
+                <schemas>
+                        <schemapath type="mysql">sql/updates/mysql</schemapath>
+                </schemas>
+        </update>
+ 
+        <!-- Note the folder attribute: This attribute describes the folder
+                to copy FROM in the package to install therefore files copied
+                in this section are copied from "site/" in the package -->
+        <files folder="site">
+                <filename>index.html</filename>
+                <filename>bloodbowl.php</filename>
+				<filename>controller.php</filename>
+				<filename>router.php</filename>
+				<folder>views</folder>
+				<folder>models</folder>
+				<folder>controllers</folder>
+				<folder>language</folder>
+				<folder>helpers</folder>
+        </files>
+		
+		<languages folder="site">
+                <language tag="da-DK">language/da-DK/da-DK.com_bloodbowl.ini</language>
+				<language tag="en-GB">language/en-GB/en-GB.com_bloodbowl.ini</language>
+        </languages>
+		
+		<media destination="com_bloodbowl" folder="media">
+                <filename>index.html</filename>
+                <folder>images</folder>
+				<folder>css</folder>
+        </media>
+ 
+        <administration>
+                <menu>BloodBowl</menu>
+                <!-- Note the folder attribute: This attribute describes the folder
+                        to copy FROM in the package to install therefore files copied
+                        in this section are copied from "admin/" in the package -->
+                <files folder="admin">
+                        <filename>index.html</filename>
+                        <filename>bloodbowl.php</filename>
+						<folder>tables</folder>
+						<folder>models</folder>
+						<folder>sql</folder>
+						<folder>language</folder>
+                </files>
+				<languages folder="admin">
+                        <language tag="en-GB">language/en-GB/en-GB.com_bloodbowl.ini</language>
+                        <language tag="da-DK">language/da-DK/da-DK.com_bloodbowl.ini</language>
+                </languages>
+        </administration>
+ 
+</extension>

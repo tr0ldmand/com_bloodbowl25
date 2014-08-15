@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form name="delmatch">
+	<fieldset>
+        <field
+            name="match_id"
+            type="hidden"
+            default="" />
+		
+		<field
+            name="tour_id"
+            type="hidden"
+            default="" />
+	</fieldset>	
+</form>
