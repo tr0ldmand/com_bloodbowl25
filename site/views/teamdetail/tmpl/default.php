@@ -228,7 +228,7 @@ if ($this->pop==false)
 	<input type="hidden" name="view" value="teamdetail" />
 	<input type="hidden" name="show" value="<?php echo $this->showteam; ?>" />
 	<input type="hidden" name="task" value="teamdetail.submit" />
-	<button type="submit" class="validate button"><?php echo JText::_('Submit'); ?></button>
+	<button type="submit" class="validate button" onclick="this.disabled = true;"><?php echo JText::_('Submit'); ?></button>
 	<?php echo JHtml::_('form.token'); ?>
 <?php } /* end if is owner */ ?>
 </form>
