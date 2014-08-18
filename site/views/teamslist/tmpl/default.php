@@ -8,7 +8,7 @@ echo BloodBowlHelper::addMenubar();
 ?>
 <a name="bb" class="focus"></a>
 <h1><?php echo JText::_( 'COM_BLOODBOWL_TEAMSLIST' ); ?></h1>
-<?php include('formlimit.php'); ?>
+<?php include('default_formlimit.php'); ?>
 <p>
 <table id="teamslist" style="border:none; width:70%; padding: 1px;">
 	<tr>

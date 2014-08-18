@@ -217,7 +217,10 @@ class BloodBowlTableBloodBowl extends JTable
 				}
 				if ($level > 0 )
 				{
-					$ach_skills = explode(",",$player->ach_skills);
+					$ach_skills = explode(", ",$player->ach_skills);
+					//ensure no duplicate skills exist
+					$ach_skills = array_unique($ach_skills);
+					$players[$key]->ach_skills = implode(", ",$ach_skills);
 					$curr_skills = count($ach_skills);
 					if ( $curr_skills < $level || $player->ach_skills==null) 
 					{
@@ -452,7 +455,7 @@ class BloodBowlTableBloodBowl extends JTable
 				$query->from($this->_db->quoteName('#__bb_tourneys'));
 				$query->where($this->_db->quoteName('finished') ."=". $this->_db->q('0000-00-00'));
 				$query->where($this->_db->quoteName('type') ."NOT LIKE". $this->_db->q('rating'));
-				$query->where($this->_db->quoteName('tour_id') ." NOT IN (SELECT child FROM `gd8h_bb_tourneys_in_tourneys` WHERE `parent`=$id)");
+				$query->where($this->_db->quoteName('tour_id') ." NOT IN (SELECT child FROM `#__bb_tourneys_in_tourneys` WHERE `parent`=$id)");
 				$this->_db->setQuery($query);
 				if ($this->_db->getErrorNum()>0)
 				{
@@ -638,7 +641,7 @@ class BloodBowlTableTeams extends JTable
 			$query->select('a.*');
 			$query->select("GROUP_CONCAT(DISTINCT d.tour_id ) AS tours, GROUP_CONCAT(DISTINCT d.name ) AS tour_names");
 			$query->from('#__bb_teams AS a');
-			$query->join('LEFT',"(SELECT b.tour_id, c.name, c.finished, b.team_id FROM gd8h_bb_teams_in_tourney AS b INNER JOIN gd8h_bb_tourneys AS c ON b.tour_id=c.tour_id WHERE c.finished='0000-00-00') AS d ON a.id=d.team_id");
+			$query->join('LEFT',"(SELECT b.tour_id, c.name, c.finished, b.team_id FROM #__bb_teams_in_tourney AS b INNER JOIN #__bb_tourneys AS c ON b.tour_id=c.tour_id WHERE c.finished='0000-00-00') AS d ON a.id=d.team_id");
 			$query->group('a.id');
 			$query->order($orderby);
 			

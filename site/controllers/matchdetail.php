@@ -40,7 +40,7 @@ class BloodBowlControllerMatchDetail extends JControllerForm
 				$match->fame2        = $data['fame2'];
 				$match->income1      = $data['income1'];
 				$match->income2      = $data['income2'];
-				if (is_null($data['date_created']))
+				if (empty($data['date_created']))
 					$match->date_created = date("Y-m-d H:i:s");
 				$match->date_played  = $data['date_played'];
 				$match->date_modified= date("Y-m-d H:i:s");
