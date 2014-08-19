@@ -4,15 +4,17 @@ defined('_JEXEC') or die;
 
 $stylecenter = 'text-align:center;';
 $styleleft = 'text-align:left;';
+$styleright = 'text-align:right;';
 ?>
 
 <h2><?php echo JText::_('COM_BLOODBOWL_MY_TEAMS'); ?></h2>
 <div style="float: left;"><table>
 	<tr>
+		<th><?php echo JText::_( 'COM_BLOODBOWL_RACE'); ?></th>
 		<th><?php echo JText::_('COM_BLOODBOWL_TEAM_NAME'); ?></th>
 		<th><?php echo JText::_('COM_BLOODBOWL_TEAM_READY'); ?></th>
+		<th><?php echo JText::_( 'COM_BLOODBOWL_TEAM_INFORMATION'); ?></th>
 		<th><?php echo JText::_('COM_BLOODBOWL_IN_TOURNEYS'); ?></th>
-		<th></th>
 	</tr>
 	<?php
 		foreach ($this->myteams as $team)
@@ -24,15 +26,17 @@ $styleleft = 'text-align:left;';
 				$bgcolor   = 'WhiteSmoke';
 			}
 			echo "<tr style=\"background-color: $bgcolor;\">";
+			 echo "<td><img src=\"media/com_bloodbowl/images/icons/{$team->icon}\" alt=\"{$team->race}\" height=\"25\" width=\"25\"></td>\n";
 			 echo "<td style='$styleleft'><a href=\"".JRoute::_('index.php?view=teamdetail&show='. $team->id )."\">".$team->name."</a></td>\n";
 			 echo "<td style='$stylecenter'>". ($team->locked==1 ? JText::_('COM_BLOODBOWL_MUST_UPDATE') : JText::_('COM_BLOODBOWL_READY')) ."</td>\n";
+			 echo "<td style='$styleright'>". ($team->teamvalue)/10000 ."</td>\n";
 			 echo "<td style='$styleleft'>";
 			 foreach ($team->tours AS $tour)
 			 {
 				echo JHtml::_('link', JRoute::_("index.php?view=tourneydetail&show={$tour->id}"), $tour->name, null) .' <br>';
 			 }
 			 echo "</td>\n";
-			 echo "<td style='$stylecenter'>".(strlen($team->comment)>30 ? '<img src="media/com_bloodbowl/images/icons/discuss.gif" title="'. JText::_('COM_BLOODBOWL_TEAM_COMMENT') .'"/>':'&nbsp;')."</td>\n";			
+			 //echo "<td style='$stylecenter'>".(strlen($team->comment)>30 ? '<img src="media/com_bloodbowl/images/icons/discuss.gif" title="'. //JText::_('COM_BLOODBOWL_TEAM_COMMENT') .'"/>':'&nbsp;')."</td>\n";
 			echo "</tr>\n";
 		}
 		if (empty($this->myteams))

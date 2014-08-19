@@ -21,7 +21,7 @@ abstract class BloodBowlHelper
 			if (!$user->guest)
 			{
 				$html .=  ' | ';
-				$html .=  JHtml::_('link', JRoute::_('index.php?view=teamslist&show='. $user->id ), JText::_('COM_BLOODBOWL_MY_TEAMS'), null);
+				$html .=  JHtml::_('link', JRoute::_('index.php'), JText::_('COM_BLOODBOWL_MY_TEAMS'), null);
 			}
 			$html .=  ' | ';
 			$html .=  JHtml::_('link', JRoute::_('index.php?view=tourneydetail&show=33'), 'Rating 2014', null);
