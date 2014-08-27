@@ -1,0 +1,9 @@
+DROP TABLE IF EXISTS `#__bb_matches`;
+DROP TABLE IF EXISTS `#__bb_match_data`;
+DROP TABLE IF EXISTS `#__bb_players`;
+DROP TABLE IF EXISTS `#__bb_roster`;
+DROP TABLE IF EXISTS `#__bb_skills`;
+DROP TABLE IF EXISTS `#__bb_teams`;
+DROP TABLE IF EXISTS `#__bb_teams_in_tourney`;
+DROP TABLE IF EXISTS `#__bb_tourneys`;
+DROP TABLE IF EXISTS `#__bb_tourneys_in_tourneys`;
