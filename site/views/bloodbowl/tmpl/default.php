@@ -65,3 +65,5 @@ if ($this->iscoach)
 		}
 	?>
 </table>
+<?php
+echo BloodBowlHelper::getVersion();

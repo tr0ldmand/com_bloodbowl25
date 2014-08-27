@@ -9,7 +9,7 @@
         <authorUrl>http://www.trc.dk</authorUrl>
         <copyright>(C) 2013 André Samuelsen</copyright>
         <!--  The version string is stored in the components table -->
-        <version>0.9.0</version>
+        <version>0.9.1</version>
         <!-- The description is optional and defaults to the name -->
         <description>Component for managing our local BloodBowl League.</description>
 		

@@ -31,9 +31,23 @@ abstract class BloodBowlHelper
 		}
 		
 		/**
+		 *   Returns html to show component version
+		 */
+		public static function getVersion() {
+			$parser = JFactory::getXMLParser('Simple');
+			$xml = JPATH_ADMINISTRATOR .'/components/com_bloodbowl/bloodbowl.xml';
+			$parser->loadFile($xml);
+			$doc = $parser->document;
+			$element = $doc->getElementByPath('version');
+			$version = $element->data();
+			$html = "<pre>BloodBowl component version: $version</pre>";
+			return $html;
+		}
+		
+		
+		/**
 		 *  Expecting array $matches and int $start
 		 */
-		
 		public static function showMatchHistory($matches=array(), $start=0)
 		{
 			$jinput =& JFactory::getApplication()->input;
