@@ -161,7 +161,7 @@ class BloodBowlModelTeamDetail extends JModelForm
 			//JFactory::getApplication()->enqueueMessage("Det g;lder at newskills=". $this->players[0]->newskills ." og activeplayers=". $this->players[0]->activeplayers, 'notice');
 			if ($this->players[0]->newskills==0 && $this->players[0]->activeplayers>1)
 			{
-				//if ($this->team->locked==0) return true;
+				if ($this->team->retired>0) return false;
 				return $this->unlockTeam();
 			}
 			return false;

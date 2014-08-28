@@ -44,7 +44,7 @@ class BloodBowlViewTeamDetail extends JView
 						JFactory::getApplication()->enqueueMessage("Holdet er opdateret, og klar til kamp.", 'message');
 						$this->team->locked=false;
 					}
-					elseif ($this->iscoach)
+					elseif ($this->iscoach and $this->team->retired==0)
 					{
 						JFactory::getApplication()->enqueueMessage("Holdet skal opdateres før det kan spille.", 'notice');
 					}
