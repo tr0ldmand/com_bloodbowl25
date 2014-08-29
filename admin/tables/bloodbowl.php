@@ -289,7 +289,7 @@ class BloodBowlTableBloodBowl extends JTable
 			return $ekstrainfo + $players;
 		}
 		
-		public function getMatchesInTourney($id=29, $start=-1, $limit=20)
+		public function getMatchesInTourney($id=33, $start=-1, $limit=20)
 		{
 			if ($id>0)
 			{
@@ -298,7 +298,7 @@ class BloodBowlTableBloodBowl extends JTable
 			return FALSE;
 		}
 		
-		public function getTeamsInTourney($id=29, $order="cname", $race="all", $coach=0)
+		public function getTeamsInTourney($id=33, $order="cname", $race="all", $coach=0)
 		{
 			
 			if ($id>0)

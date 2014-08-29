@@ -51,7 +51,7 @@ abstract class BloodBowlHelper
 		public static function showMatchHistory($matches=array(), $start=0)
 		{
 			$jinput =& JFactory::getApplication()->input;
-			$show = $jinput->get('show','29','int');
+			$show = $jinput->get('show','33','int');
 			$view = $jinput->get('view','bloodbowl','str');
 			if ($view=='tourneydetail') $view .= '2';
 			$url = 'index.php?view='. $view .'&show='. $show;

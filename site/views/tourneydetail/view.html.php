@@ -21,7 +21,7 @@ class BloodBowlViewTourneyDetail extends JView
 				$app =& JFactory::getApplication();
 				$jinput = $app->input;
 				
-				$this->show = $jinput->get('show','29','int');
+				$this->show = $jinput->get('show','33','int');
 				$this->order = $jinput->get('order','skjul','str');
 				$this->race = $jinput->get('race','all','str');
 				$this->coach = $jinput->get('coach','0','int');
