@@ -13,7 +13,7 @@ if ($this->pop==false)
 	echo BloodBowlHelper::addMenubar();
 	?>
 	<div style="float: right;">
-		<?php if ($this->iscoach==true)   echo $this->editbutton;  ?>
+		<?php if ($this->iscoach==true) echo $this->editbutton;  ?>
 		<?php if ($this->team->locked==0) echo $this->printbutton; ?>
 	</div>
 	<?php
@@ -24,11 +24,13 @@ if ($this->pop==false)
 
 <form class="form-validate" action="<?php echo JRoute::_('index.php?view=teamdetail&show='. $this->showteam); ?>" method="post" id="updteam" name="updteam">
 <center>
-	<img height="50px" width="50px" src="media/com_bloodbowl/images/icons/<?php echo $this->team->icon; ?>">
+	<?php if( $this->pop==false ) { ?>
+		<img height="50px" width="50px" src="media/com_bloodbowl/images/icons/<?php echo $this->team->icon; ?>">
+	<?php } ?>
 	<h1><?php echo ($this->owner ? $this->form->getInput('team_name',null,$this->team->name) : $this->team->name ); ?></h1>
 </center>
-<p><?php if ($this->pop==false) echo ($this->owner ? $this->form->getInput('comment',null,$this->team->comment) : $this->team->comment ); ?></p>
-<p><table id="roster" border="0" class="teamdetail" style="width: 100%;">
+<?php if ($this->pop==false) echo ($this->owner ? $this->form->getInput('comment',null,$this->team->comment) : $this->team->comment ); ?>
+<table id="roster" border="0" class="teamdetail" style="width: 100%;">
 	<tr>
         <th align="center" style="text=align: center; width: 2%;">#</th>
         <th>Name</th>
@@ -160,7 +162,8 @@ if ($this->pop==false)
 <p>
 <table id="other" style="width:100%; padding: 1px;">
 	<tr>
-		<td width="50%"><strong><?php echo JText::_('COM_BLOODBOWL_COACH') .": <a href=\"". JRoute::_( 'index.php?view=teamslist&show='. $this->team->coach) ."\">". JFactory::getUser($this->team->coach)->name; ?></a></strong></td>
+		<td width="25%"><strong><?php echo JText::_('COM_BLOODBOWL_COACH') .": <a href=\"". JRoute::_( 'index.php?view=teamslist&show='. $this->team->coach) ."\">". JFactory::getUser($this->team->coach)->name; ?></a></strong></td>
+		<td width="25%"><strong><?php echo JText::_('COM_BLOODBOWL_RACE') .": <a href=\"". JRoute::_( 'index.php?view=teamslist&show=0&order=name&races='. $this->team->race) ."\">". $this->team->race; ?></a></strong></td>
 		<td width="15%"><?php echo JText::_('COM_BLOODBOWL_REROLLS'); ?>:</td>
 		<td width="5%"><?php echo ( $this->owner ? $this->form->getInput('RR', null, $this->team->RR):"{$this->team->RR}" ); ?></td>
 		<td width="5%">X</td>
@@ -168,7 +171,8 @@ if ($this->pop==false)
 		<td width="10%" align='right'><?php echo ($this->team->RR)*($this->team->RRcost); ?></td>
 	</tr>
 	<tr>
-		<td><strong><?php echo JText::_('COM_BLOODBOWL_RACE') .": <a href=\"". JRoute::_( 'index.php?view=teamslist&show=0&order=name&races='. $this->team->race) ."\">". $this->team->race; ?></a></strong></td>
+		<td><strong><?php echo JText::_('COM_BLOODBOWL_STARTVAL') .": ". round(($this->team->Startval)/1000000,2); ?>M</strong></td>
+		<td><?php echo JText::sprintf('COM_BLOODBOWL_ACTIVE_OF_TOTAL', $this->players[0]->activeplayers , $this->players[0]->numplayers); ?>.</td>
 		<td><?php echo JText::_('COM_BLOODBOWL_FANFACTOR') .": "; ?></td>
 		<td><?php echo( $this->owner ? $this->form->getInput('FF', null, $this->team->FF) : $this->team->FF ); ?></td>
 		<td>X</td>
@@ -177,7 +181,8 @@ if ($this->pop==false)
 	</tr>
 	<input type='hidden' id='FF' name='FF' value='<?php echo $this->FF; ?>'>
 	<tr>
-		<td><strong><?php echo JText::_('COM_BLOODBOWL_STARTVAL') .": ". round(($this->team->Startval)/1000000,2); ?>M</strong></td>
+		<td><?php echo JText::_('COM_BLOODBOWL_TREASURY'); ?>:</td>
+		<td align='left'><?php echo $this->team->Treasury; ?></td>
 		<td><?php echo JText::_('COM_BLOODBOWL_A_COACHES'); ?>:</td>
 		<td><?php echo ( $this->owner ? $this->form->getInput('A_Coach', null, $this->team->A_Coach) : $this->team->A_Coach ); ?></td>
 		<td>X</td>
@@ -185,7 +190,11 @@ if ($this->pop==false)
 		<td align='right'><?php echo ($this->team->A_Coach)*10000; ?></td>
 	</tr>
 	<tr>
-		<td></td>
+		<td><?php echo JText::_('COM_BLOODBOWL_TEAM_VALUE'); ?>:</td>
+		<td align='left'><?php 
+			echo $TV=($this->players[0]->playervalue)+($this->team->RR)*($this->team->RRcost)+($this->team->FF)*10000+($this->team->A_Coach)*10000+($this->team->CheerLeader)*10000+($this->team->Apoth)*50000; 
+			echo $this->form->getInput('teamvalue', null, $TV);
+			?></td>
 		<td><?php echo JText::_('COM_BLOODBOWL_CHEERLEADERS'); ?>:</td>
 		<td><?php echo ( $this->owner ? $this->form->getInput('CheerLeader', null, $this->team->CheerLeader) : $this->team->CheerLeader ); ?></td>
 		<td>X</td>
@@ -193,7 +202,8 @@ if ($this->pop==false)
 		<td align='right'><?php echo ($this->team->CheerLeader)*10000; ?></td>
 	</tr>
 	<tr>
-		<td><?php echo JText::sprintf('COM_BLOODBOWL_ACTIVE_OF_TOTAL', $this->players[0]->activeplayers , $this->players[0]->numplayers); ?>.</td>
+		<td><?php echo JText::_('COM_BLOODBOWL_INDUCEMENTVAL'); ?>:</td>
+		<td align='left'><?php echo $TV=($this->players[0]->playervalue)+($this->team->RR)*($this->team->RRcost)+($this->team->FF)*10000+($this->team->A_Coach)*10000+($this->team->CheerLeader)*10000+($this->team->Apoth)*50000+$this->team->Treasury; ?></td>
 		<td><?php echo JText::_('COM_BLOODBOWL_APOTH'); ?>:</td>
 		<td><?php echo ( $this->owner ? $this->form->getInput('Apoth', null, $this->team->Apoth) : $this->team->Apoth ); ?></td>
 		<td>X</td>
@@ -202,22 +212,8 @@ if ($this->pop==false)
 	</tr>
 	<tr>
 		<td></td>
-		<td><?php echo JText::_('COM_BLOODBOWL_TREASURY'); ?>:</td>
-		<td></td>
-		<td></td>
-		<td></td>
-		<td align='right'><?php echo $this->team->Treasury; ?></td>
-	</tr>
-	<tr>
 		<td><?php echo ($this->pop>0 ? date("d-m-Y",time()):'' ); ?></td>
-		<td><?php echo JText::_('COM_BLOODBOWL_TEAM_VALUE'); ?>:</td>
-		<td></td>
-		<td></td>
-		<td></td>
-		<td align='right'><?php 
-			echo $TV=($this->players[0]->playervalue)+($this->team->RR)*($this->team->RRcost)+($this->team->FF)*10000+($this->team->A_Coach)*10000+($this->team->CheerLeader)*10000+($this->team->Apoth)*50000; 
-			echo $this->form->getInput('teamvalue', null, $TV);
-			?></td>
+		<td></td><td></td><td></td><td></td><td></td>
 	</tr>
 </table>
 
@@ -232,7 +228,6 @@ if ($this->pop==false)
 	<?php echo JHtml::_('form.token'); ?>
 <?php } /* end if is owner */ ?>
 </form>
-</p>
 
 <?php if( $this->pop==false ) { ?>
 <?php if( !empty($this->stats->win) ) { ?>
