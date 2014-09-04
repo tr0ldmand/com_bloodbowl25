@@ -31,7 +31,9 @@ else
 
 
 <?php
+//echo "editor:".$this->match->editor." & showedit:".$this->showedit." & Disabled:".$this->match->disabled." &played:".$this->match->date_played;
 if ($this->match->editor || $this->showedit) {
+
 ?>
 <div style="float: right;"><a href="<?php echo JRoute::_('index.php?view=matchdetail&show='. $this->match->match_id .'&toggleedit='. $this->nextedit ); ?>"><img src="media/com_bloodbowl/images/edit.png" border="0px"></a></div>
 <?php
@@ -159,7 +161,7 @@ if ($this->match->editor || $this->showedit) {
 	<tr>
 		<td><strong><?php echo $this->form->getLabel('comment'); ?></strong></td>
 		<td><?php 
-			if (($this->match->editor && !$this->match->disabled) || $this->match->iscoach)
+			if ($this->match->editor)
 			{
 				//editorArea( 'editor1',  $this->match->comment , 'text', 600, 150, '50', '10' ) ;
 				//echo "<textarea name=\"match_comment\" maxlength=\"300\">". $this->match->comment ."</textarea>";
