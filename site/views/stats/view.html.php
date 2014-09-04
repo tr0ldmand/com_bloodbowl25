@@ -10,7 +10,7 @@ jimport('joomla.application.component.view');
 
  
 
-class BloodBowlViewStats extends JView
+class BloodBowlViewStats extends JViewLegacy
 
 {
 

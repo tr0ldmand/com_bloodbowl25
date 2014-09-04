@@ -13,7 +13,7 @@ jimport('joomla.application.component.controller');
 //JTable::addIncludePath(JPATH_COMPONENT_ADMINISTRATOR. DS .'tables');
 
 // Get an instance of the controller prefixed by BloodBowl
-$controller = JController::getInstance('BloodBowl');
+$controller = JControllerLegacy::getInstance('BloodBowl'); 
  
 // Perform the Request task
 $controller->execute(JFactory::getApplication()->input->getCmd('task'));

@@ -4,8 +4,7 @@ defined('_JEXEC') or die;
  
 jimport('joomla.application.component.controller');
  
-class BloodBowlController extends JController
-{
-	
-}
+class BloodBowlController extends JControllerLegacy
+	{
+	}	
 ?>
