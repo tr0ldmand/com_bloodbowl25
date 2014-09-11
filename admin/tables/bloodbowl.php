@@ -353,7 +353,12 @@ class BloodBowlTableBloodBowl extends JTable
 				$where = "";
 				foreach ($order as $field)
 				{
-					$where .= "`". $field ."` DESC, ";
+					if ($field == 'matches'){
+						$where .= "`". $field ."` ASC, ";
+					}
+					else{
+						$where .= "`". $field ."` DESC, ";
+					}
 				}
 				$where = rtrim($where,', ');
 				// This is how we calculate points
