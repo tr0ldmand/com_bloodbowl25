@@ -11,6 +11,467 @@ class BloodBowlTableBloodBowl extends JTable
                 parent::__construct('#__bb_tourneys', 'tour_id', $db);
         }
 		
+	function getStats($type, $year=0){//Set year=1 for all years
+			if ($year == 0) $year=date("Y"); // current year selected if parameter is not given. 
+			switch ($type) {
+				case 'alltime_topscorers':
+					$query = "SELECT max(a.date_sold) as date_sold, a.name, a.position, b.id, b.name as teamname, sum(c.td) as tds, count(c.td) as matches
+							FROM #__bb_players as a 
+							JOIN #__bb_teams as b ON a.owned_by_team_id = b.id
+							JOIN #__bb_match_data as c ON a.player_id = f_player_id
+							JOIN #__bb_matches as d ON c.f_match_id = d.match_id
+							WHERE YEAR(d.date_played) = ".$year." OR $year=1
+							GROUP BY a.player_id
+							ORDER BY tds DESC, matches ASC
+							LIMIT 7";
+					$this->_db->setQuery( $query );
+					$rows = $this->_db->loadObjectList();
+					
+					
+					$teamlink = 'index.php/bloodbowl/teamdetail/';
+					foreach ($rows as $key=>$entry){
+						$rows[$key]->teamname = '<a href="'.JRoute::_(JURI::base().$teamlink.$rows[$key]->id).'">'.$rows[$key]->teamname.'</a>';
+					}
+					$rows[0]->title = array(COM_BLOODBOWL_PLAYERNAME,COM_BLOODBOWL_POSITION, COM_BLOODBOWL_TEAMNAME, COM_BLOODBOWL_TOUCHDOWNS, COM_BLOODBOWL_MATCHES);
+					$rows[0]->titleid = array("name", "position", "teamname", "tds" , "matches");
+					break;
+					
+				case 'alltime_casualties':
+					$query = "SELECT max(a.date_sold) as date_sold, a.name, a.position, b.id, b.name as teamname, sum(c.bh+c.si+c.ki) as cas, count(c.bh) as matches
+							FROM #__bb_players as a 
+							JOIN #__bb_teams as b ON a.owned_by_team_id = b.id
+							JOIN #__bb_match_data as c ON a.player_id = f_player_id
+							JOIN #__bb_matches as d ON c.f_match_id = d.match_id
+							WHERE YEAR(d.date_played) = ".$year." OR $year=1
+							GROUP BY a.player_id
+							ORDER BY cas DESC, matches ASC
+							LIMIT 7";
+					$this->_db->setQuery( $query );
+					$rows = $this->_db->loadObjectList();
+					
+					
+					$teamlink = 'index.php/bloodbowl/teamdetail/';
+					foreach ($rows as $key=>$entry){
+						$rows[$key]->teamname = '<a href="'.JRoute::_(JURI::base().$teamlink.$rows[$key]->id).'">'.$rows[$key]->teamname.'</a>';
+					}
+					$rows[0]->title = array(COM_BLOODBOWL_PLAYERNAME,COM_BLOODBOWL_POSITION, COM_BLOODBOWL_TEAMNAME, COM_BLOODBOWL_CASUALTIES, COM_BLOODBOWL_MATCHES);
+					$rows[0]->titleid = array("name", "position", "teamname", "cas" , "matches");
+					break;
+				
+				case 'alltime_completions':
+					$query = "SELECT max(a.date_sold) as date_sold, a.name, a.position, b.id, b.name as teamname, sum(c.cp) as cps, count(c.cp) as matches
+							FROM #__bb_players as a 
+							JOIN #__bb_teams as b ON a.owned_by_team_id = b.id
+							JOIN #__bb_match_data as c ON a.player_id = f_player_id
+							JOIN #__bb_matches as d ON c.f_match_id = d.match_id
+							WHERE YEAR(d.date_played) = ".$year." OR $year=1
+							GROUP BY a.player_id
+							ORDER BY cps DESC, matches ASC
+							LIMIT 7";
+					$this->_db->setQuery( $query );
+					$rows = $this->_db->loadObjectList();
+					
+					
+					$teamlink = 'index.php/bloodbowl/teamdetail/';
+					foreach ($rows as $key=>$entry){
+						$rows[$key]->teamname = '<a href="'.JRoute::_(JURI::base().$teamlink.$rows[$key]->id).'">'.$rows[$key]->teamname.'</a>';
+					}
+					$rows[0]->title = array(COM_BLOODBOWL_PLAYERNAME,COM_BLOODBOWL_POSITION, COM_BLOODBOWL_TEAMNAME, COM_BLOODBOWL_COMPLETIONS, COM_BLOODBOWL_MATCHES);
+					$rows[0]->titleid = array("name", "position", "teamname", "cps" , "matches");
+					break;
+					
+				case 'alltime_kills':
+					$query = "SELECT max(a.date_sold) as date_sold, a.name, a.position, b.id, b.name as teamname, sum(c.ki) as cas, count(c.bh) as matches
+							FROM #__bb_players as a 
+							JOIN #__bb_teams as b ON a.owned_by_team_id = b.id
+							JOIN #__bb_match_data as c ON a.player_id = f_player_id
+							JOIN #__bb_matches as d ON c.f_match_id = d.match_id
+							WHERE YEAR(d.date_played) = ".$year." OR $year=1
+							GROUP BY a.player_id
+							ORDER BY cas DESC, matches ASC
+							LIMIT 7";
+					$this->_db->setQuery( $query );
+					$rows = $this->_db->loadObjectList();
+					
+					
+					$teamlink = 'index.php/bloodbowl/teamdetail/';
+					foreach ($rows as $key=>$entry){
+						$rows[$key]->teamname = '<a href="'.JRoute::_(JURI::base().$teamlink.$rows[$key]->id).'">'.$rows[$key]->teamname.'</a>';
+					}
+					$rows[0]->title = array(COM_BLOODBOWL_PLAYERNAME,COM_BLOODBOWL_POSITION, COM_BLOODBOWL_TEAMNAME, COM_BLOODBOWL_KILLS, COM_BLOODBOWL_MATCHES);
+					$rows[0]->titleid = array("name", "position", "teamname", "cas" , "matches");
+					break;
+					
+				case 'alltime_interceptions':
+					$query = "SELECT max(a.date_sold) as date_sold, a.name, a.position, b.id, b.name as teamname, sum(c.intcpt) as intcpt, count(c.bh) as matches
+							FROM #__bb_players as a 
+							JOIN #__bb_teams as b ON a.owned_by_team_id = b.id
+							JOIN #__bb_match_data as c ON a.player_id = f_player_id
+							JOIN #__bb_matches as d ON c.f_match_id = d.match_id
+							WHERE YEAR(d.date_played) = ".$year." OR $year=1
+							GROUP BY a.player_id
+							ORDER BY intcpt DESC, matches ASC
+							LIMIT 7";
+					$this->_db->setQuery( $query );
+					$rows = $this->_db->loadObjectList();
+					
+					
+					$teamlink = 'index.php/bloodbowl/teamdetail/';
+					foreach ($rows as $key=>$entry){
+						$rows[$key]->teamname = '<a href="'.JRoute::_(JURI::base().$teamlink.$rows[$key]->id).'">'.$rows[$key]->teamname.'</a>';
+					}
+					$rows[0]->title = array(COM_BLOODBOWL_PLAYERNAME,COM_BLOODBOWL_POSITION, COM_BLOODBOWL_TEAMNAME, COM_BLOODBOWL_INTCPTS, COM_BLOODBOWL_MATCHES);
+					$rows[0]->titleid = array("name", "position", "teamname", "intcpt" , "matches");
+					break;
+				
+				case 'alltime_starplayer':
+					$query = "SELECT max(a.date_sold) as date_sold, a.name, a.position, b.id, b.name as teamname, sum((c.intcpt+c.ki+c.bh+c.si)*2+c.td*3+c.cp+c.mvp*5) as spp, count(c.bh) as matches
+							FROM #__bb_players as a 
+							JOIN #__bb_teams as b ON a.owned_by_team_id = b.id
+							JOIN #__bb_match_data as c ON a.player_id = f_player_id
+							JOIN #__bb_matches as d ON c.f_match_id = d.match_id
+							WHERE YEAR(d.date_played) = ".$year." OR $year=1
+							GROUP BY a.player_id
+							ORDER BY spp DESC, matches ASC
+							LIMIT 7";
+					$this->_db->setQuery( $query );
+					$rows = $this->_db->loadObjectList();
+					
+					
+					$teamlink = 'index.php/bloodbowl/teamdetail/';
+					foreach ($rows as $key=>$entry){
+						$rows[$key]->teamname = '<a href="'.JRoute::_(JURI::base().$teamlink.$rows[$key]->id).'">'.$rows[$key]->teamname.'</a>';
+					}
+					$rows[0]->title = array(COM_BLOODBOWL_PLAYERNAME,COM_BLOODBOWL_POSITION, COM_BLOODBOWL_TEAMNAME, COM_BLOODBOWL_SPP, COM_BLOODBOWL_MATCHES);
+					$rows[0]->titleid = array("name", "position", "teamname", "spp" , "matches");
+					break;
+					
+				case 'coach_rating':
+					// get coach<->team list
+					$query = "SELECT coach, id FROM #__bb_teams";
+					$this->_db->setQuery( $query );
+					$coachlist = $database->loadObjectlist('id');
+					// assign start rating
+					$query = "SELECT DISTINCT a.coach, b.name FROM #__bb_teams as a LEFT JOIN #__users as b ON a.coach = b.id 
+					WHERE a.coach > 0";
+					$this->_db->setQuery( $query );
+					$coaches = $database->loadObjectlist('coach');
+					foreach ($coaches as $key=>$coach){
+						$coaches[$key]->rating = '1200';
+						$coaches[$key]->won = '0';
+						$coaches[$key]->draw = '0';
+						$coaches[$key]->lost = '0';
+					}
+					
+					// get coach<->team list
+					$query = "SELECT match_id, gate, team1_id, team2_id, fame1, fame2, team1_score, team2_score FROM #__bb_matches ORDER BY match_id ASC";
+					$this->_db->setQuery( $query );
+					$matches = $database->loadObjectlist('match_id');
+					
+					foreach ($matches as $match){
+						//find We
+						//We = 1 / (10(-dr/400) + 1)
+						//dr = din rating - modstanders rating + 25*FAME forskel
+						$cid1 = $coachlist[$match->team1_id]->coach;
+						$cid2 = $coachlist[$match->team2_id]->coach;
+						$dr = $coaches[$cid1]->rating-$coaches[$cid2]->rating;
+						$dFAME= ($match->fame1 - $match->fame2)*25;
+						if (($match->gate) > 0) {
+							$We= 1/(pow(10,(-($dr+$dFAME))/400) +1);
+							//Rn = Ro + K × (W - We)
+							$goaldiff=$match->team1_score-$match->team2_score;
+							if ($goaldiff<0){ //team2 won
+								$W=0;
+								$coaches[$cid2]->won = $coaches[$cid2]->won+1;
+								$coaches[$cid1]->lost = $coaches[$cid1]->lost+1;
+							}elseif ($goaldiff==0){ //draw
+								$W=0.5;
+								$coaches[$cid1]->draw = $coaches[$cid1]->draw+1;
+								$coaches[$cid2]->draw = $coaches[$cid2]->draw+1;
+							}else { //team1 won
+								$W=1;
+								$coaches[$cid1]->won = $coaches[$cid1]->won+1;
+								$coaches[$cid2]->lost = $coaches[$cid2]->lost+1;
+							}
+							$goaldiff = sqrt($goaldiff*$goaldiff);
+							$K = max(30,30*(2-pow(0.5,-1+$goaldiff)));
+							$cid=$cid1;
+							$coaches[$cid]->matches = $coaches[$cid]->matches+1;
+							$coaches[$cid]->winpct = round(($coaches[$cid]->won / $coaches[$cid]->matches)*100,1);
+							$change = $K * ($W - $We);
+							$coaches[$cid]->change = round($change);
+							$ratingchange = $coaches[$cid]->change;
+							$rating1 = round($coaches[$cid]->rating);
+							$coaches[$cid]->rating = $coaches[$cid]->rating + $change;
+							$cid=$cid2;
+							$coaches[$cid]->matches = $coaches[$cid]->matches+1;
+							$coaches[$cid]->winpct = round(($coaches[$cid]->won / $coaches[$cid]->matches)*100,1);
+							$change = $K * (1-$W - (1-$We));
+							$coaches[$cid]->change = round($change);
+							$rating2 = round($coaches[$cid]->rating);
+							$coaches[$cid]->rating = $coaches[$cid]->rating + $change;
+						}
+					}
+					
+					// Produces a list of columns
+					foreach ($coaches as $key => $row) {
+						$rating[$key]  = $row->rating;
+						$name[$key] = $row->name;
+						$row->rating = round($row->rating);
+					}
+					array_multisort($rating, SORT_DESC, $name, SORT_ASC, $coaches); 
+					
+					$rows = $coaches;
+					$rows[0]->title = array(COM_BLOODBOWL_COACH, COM_BLOODBOWL_PLAYED, COM_BLOODBOWL_WINPCT, COM_BLOODBOWL_WON, COM_BLOODBOWL_DRAW, COM_BLOODBOWL_LOST, COM_BLOODBOWL_RATING);
+					$rows[0]->titleid = array("name", "matches", "winpct", "won", "draw", "lost", "rating" );
+					break;
+			
+				
+				case 'player_hall_of_fame':
+					$query = "SELECT max(a.date_sold) as date_sold, a.name, a.position, b.id, b.name as teamname, 
+							  sum((c.intcpt+c.ki+c.bh+c.si)*2+c.td*3+c.cp+c.mvp*5) as spp, count(c.bh) as matches,
+							  a.ach_skills as skills, sum(c.bh+c.si+c.ki) as cas, sum(c.td) as tds
+							FROM #__bb_players as a 
+							JOIN #__bb_teams as b ON a.owned_by_team_id = b.id
+							JOIN #__bb_match_data as c ON a.player_id = f_player_id
+							JOIN #__bb_matches as d ON c.f_match_id = d.match_id
+							WHERE NOT isnull(a.date_sold) and (YEAR(d.date_played) = ".$year." OR $year=1)
+							GROUP BY a.player_id
+							ORDER BY spp DESC, matches ASC
+							LIMIT 10";
+					$this->_db->setQuery( $query );
+					$rows = $this->_db->loadObjectList();
+					
+					
+					$teamlink = 'index.php/bloodbowl/teamdetail/';
+					foreach ($rows as $key=>$entry){
+						$rows[$key]->teamname = '<a href="'.JRoute::_(JURI::base().$teamlink.$rows[$key]->id).'">'.$rows[$key]->teamname.'</a>';
+					}
+					$rows[0]->title = array(COM_BLOODBOWL_PLAYERNAME,COM_BLOODBOWL_POSITION, COM_BLOODBOWL_TEAMNAME, COM_BLOODBOWL_SPP, COM_BLOODBOWL_ACH_SKILLS, COM_BLOODBOWL_TOUCHDOWNS, COM_BLOODBOWL_CASUALTIES, COM_BLOODBOWL_MATCHES);
+					$rows[0]->titleid = array("name", "position", "teamname", "spp", "skills", "tds" ,"cas", "matches");
+					break;
+				//***************** RACE *******************//	
+				case 'race':
+					// get matches
+					$query = "SELECT * FROM `#__bb_matches` WHERE YEAR(date_played) = ".$year." OR $year=1";
+					$this->_db->setQuery( $query );
+					$matches = $database->loadObjectlist('match_id');
+					
+					//gewt team races
+					$query = "SELECT id,race FROM #__bb_teams";
+					$this->_db->setQuery( $query );
+					$teams = $database->loadObjectlist('id');
+					
+					//prepare result table
+					$query = "SELECT DISTINCT race from #__bb_teams";
+					$this->_db->setQuery( $query );
+					$rows = $database->loadObjectlist('race');
+					
+					foreach ($matches as $match){
+						if ($match->team1_score > $match->team2_score) {
+							$rows[$teams[$match->team1_id]->race]->won = $rows[$teams[$match->team1_id]->race]->won +1;
+							$rows[$teams[$match->team1_id]->race]->matches = $rows[$teams[$match->team1_id]->race]->matches +1;
+							$rows[$teams[$match->team1_id]->race]->points = $rows[$teams[$match->team1_id]->race]->points +1;
+							$rows[$teams[$match->team2_id]->race]->lost = $rows[$teams[$match->team2_id]->race]->lost +1;
+							$rows[$teams[$match->team2_id]->race]->matches = $rows[$teams[$match->team2_id]->race]->matches +1;
+						} elseif ($match->team2_score > $match->team1_score) {
+							$rows[$teams[$match->team1_id]->race]->lost = $rows[$teams[$match->team1_id]->race]->lost +1;
+							$rows[$teams[$match->team1_id]->race]->matches = $rows[$teams[$match->team1_id]->race]->matches +1;
+							$rows[$teams[$match->team2_id]->race]->won = $rows[$teams[$match->team2_id]->race]->won +1;
+							$rows[$teams[$match->team2_id]->race]->matches = $rows[$teams[$match->team2_id]->race]->matches +1;
+							$rows[$teams[$match->team2_id]->race]->points = $rows[$teams[$match->team2_id]->race]->points +1;
+						} else {//draw 
+							$rows[$teams[$match->team1_id]->race]->draw = $rows[$teams[$match->team1_id]->race]->draw +1;
+							$rows[$teams[$match->team1_id]->race]->matches = $rows[$teams[$match->team1_id]->race]->matches +1;
+							$rows[$teams[$match->team1_id]->race]->points = $rows[$teams[$match->team1_id]->race]->points +0.5;
+							$rows[$teams[$match->team2_id]->race]->draw = $rows[$teams[$match->team2_id]->race]->draw +1;
+							$rows[$teams[$match->team2_id]->race]->matches = $rows[$teams[$match->team2_id]->race]->matches +1;
+							$rows[$teams[$match->team2_id]->race]->points = $rows[$teams[$match->team2_id]->race]->points +0.5;
+						}
+						
+					}
+					foreach ($rows as $entry){
+						if ( $entry->matches > 0 ) {
+							$entry->avg = round($entry->points / $entry->matches, 2);
+						}
+					}
+					
+					// Produces a list of columns
+					foreach ($rows as $key => $row) {
+						$avg[$key]  = $row->avg;
+						$race[$key] = $row->race;
+					}
+					array_multisort($avg, SORT_DESC, $race, SORT_ASC, $rows); 
+					
+					$rows[0]->title = array(COM_BLOODBOWL_RACE,COM_BLOODBOWL_WON,COM_BLOODBOWL_DRAW,COM_BLOODBOWL_LOST, COM_BLOODBOWL_AVG, COM_BLOODBOWL_MATCHES);
+					$rows[0]->titleid = array("race", "won", "draw", "lost", "avg", "matches");
+					break;
+					
+				//****************	team_casualties ******************//
+				case 'team_casualties':
+					
+					$query = "SELECT b.id, b.name as teamname, sum(c.bh+c.si+c.ki) as cas, count(distinct(c.f_match_id)) as matches, 
+							ROUND((sum(c.bh+c.si+c.ki) / count(distinct(c.f_match_id))),2) as avg
+							FROM #__bb_teams as b
+							JOIN #__bb_match_data as c ON b.id = f_team_id
+							JOIN #__bb_matches as d ON c.f_match_id = d.match_id
+							WHERE (YEAR(d.date_played) = ".$year." OR $year=1) 
+							GROUP BY b.id
+							ORDER BY avg DESC, cas DESC, matches ASC
+							LIMIT 10";
+					$this->_db->setQuery( $query );
+					$rows = $this->_db->loadObjectList();
+					
+					
+					$teamlink = 'index.php/bloodbowl/teamdetail/';
+					foreach ($rows as $key=>$entry){
+						$rows[$key]->teamname = '<a href="'.JRoute::_(JURI::base().$teamlink.$rows[$key]->id).'">'.$rows[$key]->teamname.'</a>';
+						if ($rows[$key]->matches < 5) {
+						  unset($rows[$key]);
+						} 
+					}
+					$rows[0]->title = array(COM_BLOODBOWL_TEAMNAME, COM_BLOODBOWL_CASUALTIES, COM_BLOODBOWL_MATCHES, COM_BLOODBOWL_AVG);
+					$rows[0]->titleid = array("teamname", "cas" , "matches", "avg");
+					break;
+					
+				case 'team_completions':
+					$query = "SELECT b.id, b.name as teamname, sum(c.cp) as cp, count(distinct(c.f_match_id)) as matches,
+							ROUND((sum(c.cp) / count(distinct(c.f_match_id))),2) as avg
+							FROM #__bb_teams as b
+							JOIN #__bb_match_data as c ON b.id = f_team_id
+							JOIN #__bb_matches as d ON c.f_match_id = d.match_id
+							WHERE YEAR(d.date_played) = ".$year." OR $year=1
+							GROUP BY b.id
+							ORDER BY avg DESC, cp DESC, matches ASC
+							LIMIT 10";
+					$this->_db->setQuery( $query );
+					$rows = $this->_db->loadObjectList();
+					
+					
+					$teamlink = 'index.php/bloodbowl/teamdetail/';
+					foreach ($rows as $key=>$entry){
+						$rows[$key]->teamname = '<a href="'.JRoute::_(JURI::base().$teamlink.$rows[$key]->id).'">'.$rows[$key]->teamname.'</a>';
+						if ($rows[$key]->matches < 5) {
+						  unset($rows[$key]);
+						} 
+					}
+					$rows[0]->title = array(COM_BLOODBOWL_TEAMNAME, COM_BLOODBOWL_COMPLETIONS, COM_BLOODBOWL_MATCHES, COM_BLOODBOWL_AVG);
+					$rows[0]->titleid = array("teamname", "cp" , "matches", "avg");
+					break;
+					
+				case 'team_defense':
+					$query = "SELECT b.id, b.name as teamname, sum(d.td) as tds, count(distinct(c.match_id)) as matches,
+							ROUND(sum(d.td) / count(distinct(c.match_id)),2) as avg
+							FROM #__bb_teams as b
+							JOIN #__bb_matches as c ON ( b.id = c.team1_id OR b.id = c.team2_id)
+							JOIN #__bb_match_data as d ON ( c.match_id = d.f_match_id AND b.id <> d.f_team_id)
+							WHERE (YEAR(c.date_played) = ".$year." OR $year=1)
+							GROUP BY b.id
+							ORDER BY avg ASC, tds ASC, matches DESC
+							LIMIT 20";
+							
+					$this->_db->setQuery( $query );
+					$rows = $this->_db->loadObjectList();
+					
+					
+					$teamlink = 'index.php/bloodbowl/teamdetail/';
+					foreach ($rows as $key=>$entry){
+						$rows[$key]->teamname = '<a href="'.JRoute::_(JURI::base().$teamlink.$rows[$key]->id).'">'.$rows[$key]->teamname.'</a>';
+						if ($rows[$key]->matches < 5) {
+						  unset($rows[$key]);
+						} 
+					}
+					$rows[0]->title = array(COM_BLOODBOWL_TEAMNAME, COM_BLOODBOWL_TOUCHDOWNS, COM_BLOODBOWL_MATCHES, COM_BLOODBOWL_AVG);
+					$rows[0]->titleid = array("teamname", "tds" , "matches", "avg");
+					break;		
+				
+				case 'team_gate':
+					$query = "SELECT b.id, b.name as teamname, round(avg(c.gate),0) as avg, max(c.gate) as maxgate, 
+							count(distinct(c.match_id)) as matches
+							FROM #__bb_teams as b
+							JOIN #__bb_matches as c ON ( b.id = c.team1_id OR b.id = c.team2_id)
+							WHERE YEAR(c.date_played) = ".$year." OR $year=1
+							GROUP BY b.id
+							ORDER BY avg DESC, matches DESC, maxgate DESC
+							LIMIT 7";
+					$this->_db->setQuery( $query );
+					$rows = $this->_db->loadObjectList();
+					
+					
+					$teamlink = 'index.php/bloodbowl/teamdetail/';
+					foreach ($rows as $key=>$entry){
+						$rows[$key]->teamname = '<a href="'.JRoute::_(JURI::base().$teamlink.$rows[$key]->id).'">'.$rows[$key]->teamname.'</a>';
+					}
+					$rows[0]->title = array(COM_BLOODBOWL_TEAMNAME, COM_BLOODBOWL_GATE_AVG, COM_BLOODBOWL_GATE_MAX, COM_BLOODBOWL_MATCHES );
+					$rows[0]->titleid = array("teamname", "avg" ,"maxgate" , "matches");
+					break;		
+					
+				case 'team_kills':
+					$query = "SELECT b.id, b.name as teamname, sum(c.ki) as kills, count(distinct(c.f_match_id)) as matches, 
+							ROUND((sum(c.ki) / count(distinct(c.f_match_id))),2) as avg
+							FROM #__bb_teams as b
+							JOIN #__bb_match_data as c ON b.id = f_team_id
+							JOIN #__bb_matches as d ON c.f_match_id = d.match_id
+							WHERE YEAR(d.date_played) = ".$year." OR $year=1
+							GROUP BY b.id
+							ORDER BY kills DESC, matches ASC
+							LIMIT 7";
+					$this->_db->setQuery( $query );
+					$rows = $this->_db->loadObjectList();
+					
+					
+					$teamlink = 'index.php/bloodbowl/teamdetail/';
+					foreach ($rows as $key=>$entry){
+						$rows[$key]->teamname = '<a href="'.JRoute::_(JURI::base().$teamlink.$rows[$key]->id).'">'.$rows[$key]->teamname.'</a>';
+						if ($rows[$key]->matches < 5) {
+						  unset($rows[$key]);
+						} 
+					}
+					$rows[0]->title = array(COM_BLOODBOWL_TEAMNAME, COM_BLOODBOWL_KILLS, COM_BLOODBOWL_MATCHES, COM_BLOODBOWL_AVG);
+					$rows[0]->titleid = array("teamname", "kills" , "matches", "avg");
+					break;
+					
+				case 'team_topscorers':
+					$query = "SELECT b.id, b.name as teamname, sum(c.td) as tds, count(distinct(c.f_match_id)) as matches,
+							ROUND((sum(c.td) / count(distinct(c.f_match_id))),2) as avg
+							FROM #__bb_teams as b
+							JOIN #__bb_match_data as c ON b.id = f_team_id
+							JOIN #__bb_matches as d ON c.f_match_id = d.match_id
+							WHERE YEAR(d.date_played) = ".$year." OR $year=1
+							GROUP BY b.id
+							ORDER BY avg DESC, tds DESC, matches ASC
+							LIMIT 10";
+					$this->_db->setQuery( $query );
+					$rows = $this->_db->loadObjectList();
+					
+					
+					$teamlink = 'index.php/bloodbowl/teamdetail/';
+					foreach ($rows as $key=>$entry){
+						$rows[$key]->teamname = '<a href="'.JRoute::_(JURI::base().$teamlink.$rows[$key]->id).'">'.$rows[$key]->teamname.'</a>';
+						if ($rows[$key]->matches < 5) {
+						  unset($rows[$key]);
+						} 
+					}
+					$rows[0]->title = array(COM_BLOODBOWL_TEAMNAME, COM_BLOODBOWL_TOUCHDOWNS, COM_BLOODBOWL_MATCHES, COM_BLOODBOWL_AVG);
+					$rows[0]->titleid = array("teamname", "tds" , "matches", "avg");
+					break;
+							
+							
+				default:
+					break;
+			}
+			foreach ($rows as $key=>$entry){
+				if ($entry->date_sold!=null){
+					$rows[$key]->name = $rows[$key]->name.'<img src="media/com_bloodbowl/images/icons/cross.gif" alt="'.JText::_(COM_BLOODBOWL_DEAD).' '.$entry->date_sold.'">';
+				}
+			}
+			
+			
+
+			return $rows;
+		}
+
+		
 		public function getTeamStats($id)
 		{
 			if ($id>0)

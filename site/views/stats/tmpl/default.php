@@ -1,41 +1,50 @@
 <?php
+function showStats($table, $heading){
+		echo "<h2>$heading</h2>\n";
+			echo '<table style="border:1px; width:70%; padding: 1px; text-align:center;">';
+			echo "<tr>\n";
+			foreach ($table[0]->title as $title) {
+				echo "<th>".JText::_($title)."</th>\n";
+			}
+			echo "</tr>\n";
+			foreach ($table as $key => $entry){
+				//alternate bgcolor
+				if ($bgcolor=='WhiteSmoke') {
+					$bgcolor='#FEE6BC';
+				} else {
+				$bgcolor   = 'WhiteSmoke';
+				}
+				echo "<tr style='background-color:".$bgcolor."';>";
+				
+				foreach ($table[0]->titleid as $titleid) {
+					echo "<td>".$entry->$titleid."</td>\n";
+				}
+				echo "</tr><tr>\n";
+			}
+			echo "</tr></table><br>\n";
+	
+	}
 // No direct access to this file
 defined('_JEXEC') or die;
  
 JFactory::getDocument()->addStyleSheet(JURI::base() . 'media/com_bloodbowl/css/com_bloodbowl.css');
 ?>
  
-<h1>TRC Blood Bowl Management Statstik</h1>
+<h1>TRC Blood Bowl Management Statistik</h1>
 <?php
 echo BloodBowlHelper::addMenubar();
 
-echo 'alltime_topscorers';
-echo $this->loadTemplate('alltime_topscorers');
-echo '<br>';
-/*echo 'alltime_casualties';
-echo $this->loadTemplate('alltime_casualties');
-echo '<br>';
-echo 'alltime_completions';
-echo $this->loadTemplate('alltime_completions');
-echo '<br>';
-echo 'alltime_kills';
-echo $this->loadTemplate('alltime_kills');
-echo '<br>';
-echo 'alltime_interceptions';
-echo $this->loadTemplate('alltime_interceptions');
-echo '<br>';
-echo 'alltime_starplayer';
-echo $this->loadTemplate('alltime_starplayer');
-echo '<br>';
-echo 'coach_rating';
-echo $this->loadTemplate('coach_rating');
-echo '<br>';
-echo 'player_hall_of_fame';
-echo $this->loadTemplate('player_hall_of_fame');
-echo '<br>';
-echo 'race';
-echo $this->loadTemplate('race');
-echo '<br>';
-*/
+showStats($this->alltime_topscorers, "All time top scorers");
+showStats($this->alltime_casualties, "All time casualties");
+showStats($this->alltime_completions, "All time completions");
+showStats($this->alltime_kills, "All time killers");
+showStats($this->alltime_interceptions, "All time interceptions");
+showStats($this->alltime_starplayer, "All time SPP earners");
+showStats($this->alltime_teamcas, "Team casualties");
+showStats($this->alltime_teamcomp, "Team completions");
+showStats($this->alltime_teamdefense, "Best defense");
+showStats($this->alltime_teamgate, "Team gate");
+showStats($this->alltime_teamkills, "Team kills");
+showStats($this->alltime_teamscore, "Team topscorers");
 
 ?>

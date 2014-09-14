@@ -15,16 +15,18 @@ abstract class BloodBowlHelper
 			$user =& JFactory::getUser();
 			
 			$html .= '<div class="bbtopmenu">';
-			$html .=  JHtml::_('link', JRoute::_('index.php?view=teamslist'), JText::_('COM_BLOODBOWL_TEAMSLIST'), null);
+			$html .=  JHtml::_('link', JRoute::_(JURI::base().'index.php/bloodbowl/teamslist'), JText::_('COM_BLOODBOWL_TEAMSLIST'), null);
 			$html .=  ' | ';
-			$html .=  JHtml::_('link', JRoute::_('index.php?view=tourney'), JText::_('COM_BLOODBOWL_TOURNEYLIST'), null);
+			$html .=  JHtml::_('link', JRoute::_(JURI::base().'index.php/bloodbowl/tourney'), JText::_('COM_BLOODBOWL_TOURNEYLIST'), null);
+			$html .=  ' | ';
+			$html .=  JHtml::_('link', JRoute::_(JURI::base().'index.php/bloodbowl/bb-statistik'), JText::_('COM_BLOODBOWL_STATS'), null);
 			if (!$user->guest)
 			{
 				$html .=  ' | ';
 				$html .=  JHtml::_('link', JRoute::_(JURI::base().'index.php/bloodbowl'), JText::_('COM_BLOODBOWL_MY_TEAMS'), null);
 			}
 			$html .=  ' | ';
-			$html .=  JHtml::_('link', JRoute::_('index.php?view=tourneydetail&show=33'), 'Rating 2014', null);
+			$html .=  JHtml::_('link', JRoute::_(JURI::base().'index.php/bloodbowl/tourneydetail/33'), 'Rating 2014', null);
 			$html .= '</div>';
 			
 			return $html;
