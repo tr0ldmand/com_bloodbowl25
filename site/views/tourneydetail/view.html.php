@@ -61,7 +61,7 @@ class BloodBowlViewTourneyDetail extends JViewLegacy
 				if ($this->tourney->type != "rating") $this->standings = $this->get('standing');
 				if ($this->tourney->type == "playoff") $this->competitors = $this->get('bracket');
 				
-				$url = "index.php?view=edittourney&show={$this->show}&order=coach&coach=0&toggleedit={$this->nextedit}";
+				$url = "index.php?view=edittourney&show={$this->tourney->tour_id}&order=coach&coach=0&toggleedit={$this->nextedit}";
 				$text = JHtml::_('image', 'system/edit.png', JText::_('JGLOBAL_EDIT'), NULL, true);
 				$this->editbutton = JHtml::_('link', JRoute::_($url), $text, null);
  

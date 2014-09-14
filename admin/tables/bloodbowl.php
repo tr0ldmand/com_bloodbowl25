@@ -6,10 +6,11 @@ jimport('joomla.database.table');
  
 class BloodBowlTableBloodBowl extends JTable
 {
-        function __construct(&$db) 
-        {
-                parent::__construct('#__bb_tourneys', 'tour_id', $db);
-        }
+
+    function __construct(&$db) 
+	{
+			parent::__construct('#__bb_tourneys', 'tour_id', $db);
+	}
 		
 	function getStats($type, $year=0){//Set year=1 for all years
 			if ($year == 0) $year=date("Y"); // current year selected if parameter is not given. 
@@ -28,7 +29,7 @@ class BloodBowlTableBloodBowl extends JTable
 					$rows = $this->_db->loadObjectList();
 					
 					
-					$teamlink = 'index.php/bloodbowl/teamdetail/';
+					$teamlink = 'index.php?view=teamdetail&show=/';
 					foreach ($rows as $key=>$entry){
 						$rows[$key]->teamname = '<a href="'.JRoute::_(JURI::base().$teamlink.$rows[$key]->id).'">'.$rows[$key]->teamname.'</a>';
 					}
@@ -750,7 +751,7 @@ class BloodBowlTableBloodBowl extends JTable
 			return $ekstrainfo + $players;
 		}
 		
-		public function getMatchesInTourney($id=33, $start=-1, $limit=20)
+		public function getMatchesInTourney($id=0, $start=-1, $limit=20)
 		{
 			if ($id>0)
 			{
@@ -759,7 +760,7 @@ class BloodBowlTableBloodBowl extends JTable
 			return FALSE;
 		}
 		
-		public function getTeamsInTourney($id=33, $order="cname", $race="all", $coach=0)
+		public function getTeamsInTourney($id=0, $order="cname", $race="all", $coach=0)
 		{
 			
 			if ($id>0)
@@ -975,8 +976,7 @@ class BloodBowlTableTourney extends JTable
 			$qC->join('LEFT','#__bb_tourneys AS c ON c.tour_id = b.parent');
 			$qC->where("a.tour_id=$id");
 			$this->_db->setQuery($qC, 0 ,1);
-			$row = $this->_db->loadObject();
-			return $row;
+			return $this->_db->loadObject();
 		}
 		
 		public function getNewestTour($type='rating')

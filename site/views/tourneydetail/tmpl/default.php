@@ -99,6 +99,6 @@ if ($this->isadmin) {
 <?php
 if( !empty($this->matches) ) 
 { 
-	echo BloodBowlHelper::showMatchHistory($this->matches, $this->matchstart);
+	echo BloodBowlHelper::showMatchHistory($this->matches, $this->matchstart, $this->tourney->tour_id);
 }
 ?>

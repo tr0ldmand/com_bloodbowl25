@@ -47,8 +47,9 @@ class BloodBowlModelTourneyDetail extends JModelForm
 		{
 			$app =& JFactory::getApplication();
 			$jinput = $app->input;
-			
-			$this->id = $jinput->get('show','33','int');
+			// Set newest Rating Tourney as the std tourney if no tourney is specified
+			$stdtour = $this->getTable('Tourney','BloodBowlTable')->getNewestTour()->tour_id;
+			$this->id = $jinput->get('show',"$stdtour",'int');
 			$this->order = $jinput->get('order','cname','str');
 			$this->race = $jinput->get('races','all','str');
 			$this->coach = $jinput->get('coach','0','int');

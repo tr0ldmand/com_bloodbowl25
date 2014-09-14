@@ -12,21 +12,21 @@ abstract class BloodBowlHelper
          */
         public static function addMenubar() 
         {
-			$user =& JFactory::getUser();
+			//$user =& JFactory::getUser();
 			
-			$html .= '<div class="bbtopmenu">';
-			$html .=  JHtml::_('link', JRoute::_(JURI::base().'index.php/bloodbowl/teamslist'), JText::_('COM_BLOODBOWL_TEAMSLIST'), null);
-			$html .=  ' | ';
-			$html .=  JHtml::_('link', JRoute::_(JURI::base().'index.php/bloodbowl/tourney'), JText::_('COM_BLOODBOWL_TOURNEYLIST'), null);
-			$html .=  ' | ';
-			$html .=  JHtml::_('link', JRoute::_(JURI::base().'index.php/bloodbowl/bb-statistik'), JText::_('COM_BLOODBOWL_STATS'), null);
+			$html = '<div class="bbtopmenu">';
 			if (!$user->guest)
 			{
+				$html .=  JHtml::_('link', JRoute::_('index.php?option=com_bloodbowl&view=bloodbowl'), JText::_('COM_BLOODBOWL_MY_TEAMS'), null);
 				$html .=  ' | ';
-				$html .=  JHtml::_('link', JRoute::_(JURI::base().'index.php/bloodbowl'), JText::_('COM_BLOODBOWL_MY_TEAMS'), null);
 			}
+			$html .=  JHtml::_('link', JRoute::_('index.php?option=com_bloodbowl&view=tourneydetail'), 'Ratingturneringen', null);
 			$html .=  ' | ';
-			$html .=  JHtml::_('link', JRoute::_(JURI::base().'index.php/bloodbowl/tourneydetail/33'), 'Rating 2014', null);
+			$html .=  JHtml::_('link', JRoute::_('index.php?option=com_bloodbowl&view=teamslist'), JText::_('COM_BLOODBOWL_TEAMSLIST'), null);
+			$html .=  ' | ';
+			$html .=  JHtml::_('link', JRoute::_('index.php?option=com_bloodbowl&view=tourney'), JText::_('COM_BLOODBOWL_TOURNEYLIST'), null);
+			$html .=  ' | ';
+			$html .=  JHtml::_('link', JRoute::_('index.php?option=com_bloodbowl&view=stats'), JText::_('COM_BLOODBOWL_STATS'), null);
 			$html .= '</div>';
 			
 			return $html;
@@ -46,13 +46,13 @@ abstract class BloodBowlHelper
 		/**
 		 *  Expecting array $matches and int $start
 		 */
-		public static function showMatchHistory($matches=array(), $start=0)
+		public static function showMatchHistory($matches=array(), $start=0, $curshow=33)
 		{
 			$jinput =& JFactory::getApplication()->input;
-			$show = $jinput->get('show','33','int');
+			//$show = $jinput->get('show','33','int');
 			$view = $jinput->get('view','bloodbowl','str');
 			if ($view=='tourneydetail') $view .= '2';
-			$url = 'index.php?view='. $view .'&show='. $show;
+			$url = 'index.php?view='. $view .'&show='. $curshow;
 			$nummatches = count($matches);
 			$matchpages = ceil($nummatches/20);
 			if ($start>$nummatches) $start=0;

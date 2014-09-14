@@ -133,8 +133,8 @@ function BloodBowlParseRoute($segments)
 					break;
 			case 'bloodbowl':
 			default:
-                    $vars['view'] = 'tourney';
-                    $vars['bruger'] = $segments[1];
+                    $vars['view'] = 'bloodbowl';
+                    $vars['show'] = $segments[1];
                     break;
        }
        return $vars;
