@@ -29,9 +29,9 @@ class BloodBowlTableBloodBowl extends JTable
 					$rows = $this->_db->loadObjectList();
 					
 					
-					$teamlink = 'index.php?view=teamdetail&show=/';
+					$teamlink = 'index.php?view=teamdetail&show=';
 					foreach ($rows as $key=>$entry){
-						$rows[$key]->teamname = '<a href="'.JRoute::_(JURI::base().$teamlink.$rows[$key]->id).'">'.$rows[$key]->teamname.'</a>';
+						$rows[$key]->teamname = '<a href="'.JRoute::_($teamlink.$rows[$key]->id).'">'.$rows[$key]->teamname.'</a>';
 					}
 					$rows[0]->title = array(COM_BLOODBOWL_PLAYERNAME,COM_BLOODBOWL_POSITION, COM_BLOODBOWL_TEAMNAME, COM_BLOODBOWL_TOUCHDOWNS, COM_BLOODBOWL_MATCHES);
 					$rows[0]->titleid = array("name", "position", "teamname", "tds" , "matches");
@@ -51,9 +51,9 @@ class BloodBowlTableBloodBowl extends JTable
 					$rows = $this->_db->loadObjectList();
 					
 					
-					$teamlink = 'index.php/bloodbowl/teamdetail/';
+					$teamlink = 'index.php?view=teamdetail&show=';
 					foreach ($rows as $key=>$entry){
-						$rows[$key]->teamname = '<a href="'.JRoute::_(JURI::base().$teamlink.$rows[$key]->id).'">'.$rows[$key]->teamname.'</a>';
+						$rows[$key]->teamname = '<a href="'.JRoute::_($teamlink.$rows[$key]->id).'">'.$rows[$key]->teamname.'</a>';
 					}
 					$rows[0]->title = array(COM_BLOODBOWL_PLAYERNAME,COM_BLOODBOWL_POSITION, COM_BLOODBOWL_TEAMNAME, COM_BLOODBOWL_CASUALTIES, COM_BLOODBOWL_MATCHES);
 					$rows[0]->titleid = array("name", "position", "teamname", "cas" , "matches");
@@ -73,9 +73,9 @@ class BloodBowlTableBloodBowl extends JTable
 					$rows = $this->_db->loadObjectList();
 					
 					
-					$teamlink = 'index.php/bloodbowl/teamdetail/';
+					$teamlink = 'index.php?view=teamdetail&show=';
 					foreach ($rows as $key=>$entry){
-						$rows[$key]->teamname = '<a href="'.JRoute::_(JURI::base().$teamlink.$rows[$key]->id).'">'.$rows[$key]->teamname.'</a>';
+						$rows[$key]->teamname = '<a href="'.JRoute::_($teamlink.$rows[$key]->id).'">'.$rows[$key]->teamname.'</a>';
 					}
 					$rows[0]->title = array(COM_BLOODBOWL_PLAYERNAME,COM_BLOODBOWL_POSITION, COM_BLOODBOWL_TEAMNAME, COM_BLOODBOWL_COMPLETIONS, COM_BLOODBOWL_MATCHES);
 					$rows[0]->titleid = array("name", "position", "teamname", "cps" , "matches");
@@ -95,9 +95,9 @@ class BloodBowlTableBloodBowl extends JTable
 					$rows = $this->_db->loadObjectList();
 					
 					
-					$teamlink = 'index.php/bloodbowl/teamdetail/';
+					$teamlink = 'index.php?view=teamdetail&show=';
 					foreach ($rows as $key=>$entry){
-						$rows[$key]->teamname = '<a href="'.JRoute::_(JURI::base().$teamlink.$rows[$key]->id).'">'.$rows[$key]->teamname.'</a>';
+						$rows[$key]->teamname = '<a href="'.JRoute::_($teamlink.$rows[$key]->id).'">'.$rows[$key]->teamname.'</a>';
 					}
 					$rows[0]->title = array(COM_BLOODBOWL_PLAYERNAME,COM_BLOODBOWL_POSITION, COM_BLOODBOWL_TEAMNAME, COM_BLOODBOWL_KILLS, COM_BLOODBOWL_MATCHES);
 					$rows[0]->titleid = array("name", "position", "teamname", "cas" , "matches");
@@ -117,9 +117,9 @@ class BloodBowlTableBloodBowl extends JTable
 					$rows = $this->_db->loadObjectList();
 					
 					
-					$teamlink = 'index.php/bloodbowl/teamdetail/';
+					$teamlink = 'index.php?view=teamdetail&show=';
 					foreach ($rows as $key=>$entry){
-						$rows[$key]->teamname = '<a href="'.JRoute::_(JURI::base().$teamlink.$rows[$key]->id).'">'.$rows[$key]->teamname.'</a>';
+						$rows[$key]->teamname = '<a href="'.JRoute::_($teamlink.$rows[$key]->id).'">'.$rows[$key]->teamname.'</a>';
 					}
 					$rows[0]->title = array(COM_BLOODBOWL_PLAYERNAME,COM_BLOODBOWL_POSITION, COM_BLOODBOWL_TEAMNAME, COM_BLOODBOWL_INTCPTS, COM_BLOODBOWL_MATCHES);
 					$rows[0]->titleid = array("name", "position", "teamname", "intcpt" , "matches");
@@ -139,9 +139,9 @@ class BloodBowlTableBloodBowl extends JTable
 					$rows = $this->_db->loadObjectList();
 					
 					
-					$teamlink = 'index.php/bloodbowl/teamdetail/';
+					$teamlink = 'index.php?view=teamdetail&show=';
 					foreach ($rows as $key=>$entry){
-						$rows[$key]->teamname = '<a href="'.JRoute::_(JURI::base().$teamlink.$rows[$key]->id).'">'.$rows[$key]->teamname.'</a>';
+						$rows[$key]->teamname = '<a href="'.JRoute::_($teamlink.$rows[$key]->id).'">'.$rows[$key]->teamname.'</a>';
 					}
 					$rows[0]->title = array(COM_BLOODBOWL_PLAYERNAME,COM_BLOODBOWL_POSITION, COM_BLOODBOWL_TEAMNAME, COM_BLOODBOWL_SPP, COM_BLOODBOWL_MATCHES);
 					$rows[0]->titleid = array("name", "position", "teamname", "spp" , "matches");
@@ -244,9 +244,9 @@ class BloodBowlTableBloodBowl extends JTable
 					$rows = $this->_db->loadObjectList();
 					
 					
-					$teamlink = 'index.php/bloodbowl/teamdetail/';
+					$teamlink = 'index.php?view=teamdetail&show=';
 					foreach ($rows as $key=>$entry){
-						$rows[$key]->teamname = '<a href="'.JRoute::_(JURI::base().$teamlink.$rows[$key]->id).'">'.$rows[$key]->teamname.'</a>';
+						$rows[$key]->teamname = '<a href="'.JRoute::_($teamlink.$rows[$key]->id).'">'.$rows[$key]->teamname.'</a>';
 					}
 					$rows[0]->title = array(COM_BLOODBOWL_PLAYERNAME,COM_BLOODBOWL_POSITION, COM_BLOODBOWL_TEAMNAME, COM_BLOODBOWL_SPP, COM_BLOODBOWL_ACH_SKILLS, COM_BLOODBOWL_TOUCHDOWNS, COM_BLOODBOWL_CASUALTIES, COM_BLOODBOWL_MATCHES);
 					$rows[0]->titleid = array("name", "position", "teamname", "spp", "skills", "tds" ,"cas", "matches");
@@ -324,9 +324,9 @@ class BloodBowlTableBloodBowl extends JTable
 					$rows = $this->_db->loadObjectList();
 					
 					
-					$teamlink = 'index.php/bloodbowl/teamdetail/';
+					$teamlink = 'index.php?view=teamdetail&show=';
 					foreach ($rows as $key=>$entry){
-						$rows[$key]->teamname = '<a href="'.JRoute::_(JURI::base().$teamlink.$rows[$key]->id).'">'.$rows[$key]->teamname.'</a>';
+						$rows[$key]->teamname = '<a href="'.JRoute::_($teamlink.$rows[$key]->id).'">'.$rows[$key]->teamname.'</a>';
 						if ($rows[$key]->matches < 5) {
 						  unset($rows[$key]);
 						} 
@@ -349,9 +349,9 @@ class BloodBowlTableBloodBowl extends JTable
 					$rows = $this->_db->loadObjectList();
 					
 					
-					$teamlink = 'index.php/bloodbowl/teamdetail/';
+					$teamlink = 'index.php?view=teamdetail&show=';
 					foreach ($rows as $key=>$entry){
-						$rows[$key]->teamname = '<a href="'.JRoute::_(JURI::base().$teamlink.$rows[$key]->id).'">'.$rows[$key]->teamname.'</a>';
+						$rows[$key]->teamname = '<a href="'.JRoute::_($teamlink.$rows[$key]->id).'">'.$rows[$key]->teamname.'</a>';
 						if ($rows[$key]->matches < 5) {
 						  unset($rows[$key]);
 						} 
@@ -375,9 +375,9 @@ class BloodBowlTableBloodBowl extends JTable
 					$rows = $this->_db->loadObjectList();
 					
 					
-					$teamlink = 'index.php/bloodbowl/teamdetail/';
+					$teamlink = 'index.php?view=teamdetail&show=';
 					foreach ($rows as $key=>$entry){
-						$rows[$key]->teamname = '<a href="'.JRoute::_(JURI::base().$teamlink.$rows[$key]->id).'">'.$rows[$key]->teamname.'</a>';
+						$rows[$key]->teamname = '<a href="'.JRoute::_($teamlink.$rows[$key]->id).'">'.$rows[$key]->teamname.'</a>';
 						if ($rows[$key]->matches < 5) {
 						  unset($rows[$key]);
 						} 
@@ -399,9 +399,9 @@ class BloodBowlTableBloodBowl extends JTable
 					$rows = $this->_db->loadObjectList();
 					
 					
-					$teamlink = 'index.php/bloodbowl/teamdetail/';
+					$teamlink = 'index.php?view=teamdetail&show=';
 					foreach ($rows as $key=>$entry){
-						$rows[$key]->teamname = '<a href="'.JRoute::_(JURI::base().$teamlink.$rows[$key]->id).'">'.$rows[$key]->teamname.'</a>';
+						$rows[$key]->teamname = '<a href="'.JRoute::_($teamlink.$rows[$key]->id).'">'.$rows[$key]->teamname.'</a>';
 					}
 					$rows[0]->title = array(COM_BLOODBOWL_TEAMNAME, COM_BLOODBOWL_GATE_AVG, COM_BLOODBOWL_GATE_MAX, COM_BLOODBOWL_MATCHES );
 					$rows[0]->titleid = array("teamname", "avg" ,"maxgate" , "matches");
@@ -421,9 +421,9 @@ class BloodBowlTableBloodBowl extends JTable
 					$rows = $this->_db->loadObjectList();
 					
 					
-					$teamlink = 'index.php/bloodbowl/teamdetail/';
+					$teamlink = 'index.php?view=teamdetail&show=';
 					foreach ($rows as $key=>$entry){
-						$rows[$key]->teamname = '<a href="'.JRoute::_(JURI::base().$teamlink.$rows[$key]->id).'">'.$rows[$key]->teamname.'</a>';
+						$rows[$key]->teamname = '<a href="'.JRoute::_($teamlink.$rows[$key]->id).'">'.$rows[$key]->teamname.'</a>';
 						if ($rows[$key]->matches < 5) {
 						  unset($rows[$key]);
 						} 
@@ -446,9 +446,9 @@ class BloodBowlTableBloodBowl extends JTable
 					$rows = $this->_db->loadObjectList();
 					
 					
-					$teamlink = 'index.php/bloodbowl/teamdetail/';
+					$teamlink = 'index.php?view=teamdetail&show=';
 					foreach ($rows as $key=>$entry){
-						$rows[$key]->teamname = '<a href="'.JRoute::_(JURI::base().$teamlink.$rows[$key]->id).'">'.$rows[$key]->teamname.'</a>';
+						$rows[$key]->teamname = '<a href="'.JRoute::_($teamlink.$rows[$key]->id).'">'.$rows[$key]->teamname.'</a>';
 						if ($rows[$key]->matches < 5) {
 						  unset($rows[$key]);
 						} 
