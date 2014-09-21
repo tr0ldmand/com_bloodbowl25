@@ -27,12 +27,7 @@ class BloodBowlTableBloodBowl extends JTable
 							LIMIT 7";
 					$this->_db->setQuery( $query );
 					$rows = $this->_db->loadObjectList();
-					
-					
-					$teamlink = 'index.php?view=teamdetail&show=';
-					foreach ($rows as $key=>$entry){
-						$rows[$key]->teamname = '<a href="'.JRoute::_($teamlink.$rows[$key]->id).'">'.$rows[$key]->teamname.'</a>';
-					}
+										
 					$rows[0]->title = array(COM_BLOODBOWL_PLAYERNAME,COM_BLOODBOWL_POSITION, COM_BLOODBOWL_TEAMNAME, COM_BLOODBOWL_TOUCHDOWNS, COM_BLOODBOWL_MATCHES);
 					$rows[0]->titleid = array("name", "position", "teamname", "tds" , "matches");
 					break;
@@ -49,12 +44,7 @@ class BloodBowlTableBloodBowl extends JTable
 							LIMIT 7";
 					$this->_db->setQuery( $query );
 					$rows = $this->_db->loadObjectList();
-					
-					
-					$teamlink = 'index.php?view=teamdetail&show=';
-					foreach ($rows as $key=>$entry){
-						$rows[$key]->teamname = '<a href="'.JRoute::_($teamlink.$rows[$key]->id).'">'.$rows[$key]->teamname.'</a>';
-					}
+										
 					$rows[0]->title = array(COM_BLOODBOWL_PLAYERNAME,COM_BLOODBOWL_POSITION, COM_BLOODBOWL_TEAMNAME, COM_BLOODBOWL_CASUALTIES, COM_BLOODBOWL_MATCHES);
 					$rows[0]->titleid = array("name", "position", "teamname", "cas" , "matches");
 					break;
@@ -71,12 +61,7 @@ class BloodBowlTableBloodBowl extends JTable
 							LIMIT 7";
 					$this->_db->setQuery( $query );
 					$rows = $this->_db->loadObjectList();
-					
-					
-					$teamlink = 'index.php?view=teamdetail&show=';
-					foreach ($rows as $key=>$entry){
-						$rows[$key]->teamname = '<a href="'.JRoute::_($teamlink.$rows[$key]->id).'">'.$rows[$key]->teamname.'</a>';
-					}
+										
 					$rows[0]->title = array(COM_BLOODBOWL_PLAYERNAME,COM_BLOODBOWL_POSITION, COM_BLOODBOWL_TEAMNAME, COM_BLOODBOWL_COMPLETIONS, COM_BLOODBOWL_MATCHES);
 					$rows[0]->titleid = array("name", "position", "teamname", "cps" , "matches");
 					break;
@@ -93,12 +78,7 @@ class BloodBowlTableBloodBowl extends JTable
 							LIMIT 7";
 					$this->_db->setQuery( $query );
 					$rows = $this->_db->loadObjectList();
-					
-					
-					$teamlink = 'index.php?view=teamdetail&show=';
-					foreach ($rows as $key=>$entry){
-						$rows[$key]->teamname = '<a href="'.JRoute::_($teamlink.$rows[$key]->id).'">'.$rows[$key]->teamname.'</a>';
-					}
+										
 					$rows[0]->title = array(COM_BLOODBOWL_PLAYERNAME,COM_BLOODBOWL_POSITION, COM_BLOODBOWL_TEAMNAME, COM_BLOODBOWL_KILLS, COM_BLOODBOWL_MATCHES);
 					$rows[0]->titleid = array("name", "position", "teamname", "cas" , "matches");
 					break;
@@ -115,12 +95,7 @@ class BloodBowlTableBloodBowl extends JTable
 							LIMIT 7";
 					$this->_db->setQuery( $query );
 					$rows = $this->_db->loadObjectList();
-					
-					
-					$teamlink = 'index.php?view=teamdetail&show=';
-					foreach ($rows as $key=>$entry){
-						$rows[$key]->teamname = '<a href="'.JRoute::_($teamlink.$rows[$key]->id).'">'.$rows[$key]->teamname.'</a>';
-					}
+										
 					$rows[0]->title = array(COM_BLOODBOWL_PLAYERNAME,COM_BLOODBOWL_POSITION, COM_BLOODBOWL_TEAMNAME, COM_BLOODBOWL_INTCPTS, COM_BLOODBOWL_MATCHES);
 					$rows[0]->titleid = array("name", "position", "teamname", "intcpt" , "matches");
 					break;
@@ -138,11 +113,6 @@ class BloodBowlTableBloodBowl extends JTable
 					$this->_db->setQuery( $query );
 					$rows = $this->_db->loadObjectList();
 					
-					
-					$teamlink = 'index.php?view=teamdetail&show=';
-					foreach ($rows as $key=>$entry){
-						$rows[$key]->teamname = '<a href="'.JRoute::_($teamlink.$rows[$key]->id).'">'.$rows[$key]->teamname.'</a>';
-					}
 					$rows[0]->title = array(COM_BLOODBOWL_PLAYERNAME,COM_BLOODBOWL_POSITION, COM_BLOODBOWL_TEAMNAME, COM_BLOODBOWL_SPP, COM_BLOODBOWL_MATCHES);
 					$rows[0]->titleid = array("name", "position", "teamname", "spp" , "matches");
 					break;
@@ -244,10 +214,6 @@ class BloodBowlTableBloodBowl extends JTable
 					$rows = $this->_db->loadObjectList();
 					
 					
-					$teamlink = 'index.php?view=teamdetail&show=';
-					foreach ($rows as $key=>$entry){
-						$rows[$key]->teamname = '<a href="'.JRoute::_($teamlink.$rows[$key]->id).'">'.$rows[$key]->teamname.'</a>';
-					}
 					$rows[0]->title = array(COM_BLOODBOWL_PLAYERNAME,COM_BLOODBOWL_POSITION, COM_BLOODBOWL_TEAMNAME, COM_BLOODBOWL_SPP, COM_BLOODBOWL_ACH_SKILLS, COM_BLOODBOWL_TOUCHDOWNS, COM_BLOODBOWL_CASUALTIES, COM_BLOODBOWL_MATCHES);
 					$rows[0]->titleid = array("name", "position", "teamname", "spp", "skills", "tds" ,"cas", "matches");
 					break;
@@ -323,10 +289,7 @@ class BloodBowlTableBloodBowl extends JTable
 					$this->_db->setQuery( $query );
 					$rows = $this->_db->loadObjectList();
 					
-					
-					$teamlink = 'index.php?view=teamdetail&show=';
 					foreach ($rows as $key=>$entry){
-						$rows[$key]->teamname = '<a href="'.JRoute::_($teamlink.$rows[$key]->id).'">'.$rows[$key]->teamname.'</a>';
 						if ($rows[$key]->matches < 5) {
 						  unset($rows[$key]);
 						} 
@@ -348,10 +311,7 @@ class BloodBowlTableBloodBowl extends JTable
 					$this->_db->setQuery( $query );
 					$rows = $this->_db->loadObjectList();
 					
-					
-					$teamlink = 'index.php?view=teamdetail&show=';
 					foreach ($rows as $key=>$entry){
-						$rows[$key]->teamname = '<a href="'.JRoute::_($teamlink.$rows[$key]->id).'">'.$rows[$key]->teamname.'</a>';
 						if ($rows[$key]->matches < 5) {
 						  unset($rows[$key]);
 						} 
@@ -374,10 +334,7 @@ class BloodBowlTableBloodBowl extends JTable
 					$this->_db->setQuery( $query );
 					$rows = $this->_db->loadObjectList();
 					
-					
-					$teamlink = 'index.php?view=teamdetail&show=';
 					foreach ($rows as $key=>$entry){
-						$rows[$key]->teamname = '<a href="'.JRoute::_($teamlink.$rows[$key]->id).'">'.$rows[$key]->teamname.'</a>';
 						if ($rows[$key]->matches < 5) {
 						  unset($rows[$key]);
 						} 
@@ -398,11 +355,6 @@ class BloodBowlTableBloodBowl extends JTable
 					$this->_db->setQuery( $query );
 					$rows = $this->_db->loadObjectList();
 					
-					
-					$teamlink = 'index.php?view=teamdetail&show=';
-					foreach ($rows as $key=>$entry){
-						$rows[$key]->teamname = '<a href="'.JRoute::_($teamlink.$rows[$key]->id).'">'.$rows[$key]->teamname.'</a>';
-					}
 					$rows[0]->title = array(COM_BLOODBOWL_TEAMNAME, COM_BLOODBOWL_GATE_AVG, COM_BLOODBOWL_GATE_MAX, COM_BLOODBOWL_MATCHES );
 					$rows[0]->titleid = array("teamname", "avg" ,"maxgate" , "matches");
 					break;		
@@ -420,10 +372,7 @@ class BloodBowlTableBloodBowl extends JTable
 					$this->_db->setQuery( $query );
 					$rows = $this->_db->loadObjectList();
 					
-					
-					$teamlink = 'index.php?view=teamdetail&show=';
 					foreach ($rows as $key=>$entry){
-						$rows[$key]->teamname = '<a href="'.JRoute::_($teamlink.$rows[$key]->id).'">'.$rows[$key]->teamname.'</a>';
 						if ($rows[$key]->matches < 5) {
 						  unset($rows[$key]);
 						} 
@@ -445,10 +394,7 @@ class BloodBowlTableBloodBowl extends JTable
 					$this->_db->setQuery( $query );
 					$rows = $this->_db->loadObjectList();
 					
-					
-					$teamlink = 'index.php?view=teamdetail&show=';
 					foreach ($rows as $key=>$entry){
-						$rows[$key]->teamname = '<a href="'.JRoute::_($teamlink.$rows[$key]->id).'">'.$rows[$key]->teamname.'</a>';
 						if ($rows[$key]->matches < 5) {
 						  unset($rows[$key]);
 						} 
@@ -461,14 +407,6 @@ class BloodBowlTableBloodBowl extends JTable
 				default:
 					break;
 			}
-			foreach ($rows as $key=>$entry){
-				if ($entry->date_sold!=null){
-					$rows[$key]->name = $rows[$key]->name.'<img src="media/com_bloodbowl/images/icons/cross.gif" alt="'.JText::_(COM_BLOODBOWL_DEAD).' '.$entry->date_sold.'">';
-				}
-			}
-			
-			
-
 			return $rows;
 		}
 

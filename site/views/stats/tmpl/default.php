@@ -7,13 +7,19 @@ function showStats($table, $heading){
 				echo "<th>".JText::_($title)."</th>\n";
 			}
 			echo "</tr>\n";
+			$teamlink = 'index.php?option=com_bloodbowl&view=teamdetail&show=';
 			foreach ($table as $key => $entry){
+				$table[$key]->teamname = '<a href="'.JRoute::_($teamlink.$table[$key]->id).'">'.$table[$key]->teamname.'</a>';
+				if ($entry->date_sold!=null){
+					$table[$key]->name = $table[$key]->name.'<img src="media/com_bloodbowl/images/icons/cross.gif" alt="'.JText::_(COM_BLOODBOWL_DEAD).' '.$entry->date_sold.'">';
+				}
 				//alternate bgcolor
 				if ($bgcolor=='WhiteSmoke') {
 					$bgcolor='#FEE6BC';
 				} else {
 				$bgcolor   = 'WhiteSmoke';
 				}
+				
 				echo "<tr style='background-color:".$bgcolor."';>";
 				
 				foreach ($table[0]->titleid as $titleid) {
