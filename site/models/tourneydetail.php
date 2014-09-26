@@ -163,7 +163,7 @@ class BloodBowlModelTourneyDetail extends JModelForm
 						break;
 					case 'point':
 					default:
-						$rrorder=array('point','win','td_for','matches');
+						$rrorder=array('point','matches','win','td_diff');
 				}
 				$table = $this->getTable('BloodBowl','BloodBowlTable');
 				//$order=array('point','win','td_for','matches');
