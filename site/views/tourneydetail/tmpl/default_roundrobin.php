@@ -34,7 +34,7 @@ defined('_JEXEC') or die;
 			else $bgcolor="WhiteSmoke";
 			echo "<tr style=\"background-color: $bgcolor;\">";
 				echo "<td>". $i++ .".</td>";
-				echo "<td>". $this->teams[$team->team_id]->team_name ." (". $this->teams[$team->team_id]->teamvalue/10000 .")</td>";
+				echo "<td>". JHtml::_('link', JRoute::_('index.php?view=teamdetail&show='. $team->team_id ), $this->teams[$team->team_id]->team_name, null) ." (". $this->teams[$team->team_id]->teamvalue/10000 .")</td>";
 				echo "<td>". $team->matches ."</td>";
 				echo "<td>". $team->point ."</td>";
 				echo "<td>". $team->win ."</td>";
