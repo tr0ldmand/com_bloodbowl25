@@ -46,16 +46,16 @@ abstract class BloodBowlHelper
 		/**
 		 *  Expecting array $matches and int $start
 		 */
-		public static function showMatchHistory($matches=array(), $start=0, $curshow=33)
+		public static function showMatchHistory($matches=array(), $curshow=33, $start=0)
 		{
 			$jinput =& JFactory::getApplication()->input;
 			//$show = $jinput->get('show','33','int');
 			$view = $jinput->get('view','bloodbowl','str');
-			if ($view=='tourneydetail') $view .= '2';
-			$url = 'index.php?view='. $view .'&show='. $curshow;
+			//if ($view=='tourneydetail') $view .= '2';
+			$url = 'index.php?view='. $view .'2&show='. $curshow;
 			$nummatches = count($matches);
 			$matchpages = ceil($nummatches/20);
-			if ($start>$nummatches) $start=0;
+			if ($start>$matchpages) $start=0;
 			$limitmatches = array_slice($matches, $start*20, 20);
 			
 			$html .= '<p><h2>';
@@ -96,7 +96,7 @@ abstract class BloodBowlHelper
 				 $html .= "<td style=\"$stylecenter\">".$match->team2_score."</td>";
 				 $html .= "<td style=\"$stylecenter\">".(strlen($match->comment)>30 ? '<img src="media/com_bloodbowl/images/icons/discuss.gif" title="'. JText::_('COM_BLOODBOWL_MATCH_SUMMARY') .'"/>':'&nbsp;')."</td>";			
 				 $html .= "<td style=\"$stylecenter\">".(is_null($match->date_played) ? '' : date("d-m-Y",strtotime($match->date_played))) ."</td>";
-				 $html .= "<td style=\"$stylecenter\">". JHtml::_('link', JRoute::_('index.php?view=matchdetail&show='. $match->match_id), JText::_('COM_BLOODBOWL_MATCH_VIEW'), null) ."</td>";
+				 $html .= "<td style=\"$stylecenter\">". JHtml::_('link', JRoute::_('index.php?view=matchdetail&show='. $match->match_id), JText::_('COM_BLOODBOWL_MATCH_VIEW'), array('title'=>'TestTitle')) ."</td>";
 				$html .= '</tr>';
 			}
 			$html .= '</table>';

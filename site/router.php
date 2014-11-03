@@ -121,6 +121,11 @@ function BloodBowlParseRoute($segments)
 					$vars['toggleedit'] = $segments[2];
 					$vars['pop'] = $segments[3];
 					break;
+			case 'teamdetail2':
+					$vars['view'] = 'teamdetail';
+					$vars['show'] = $segments[1];
+					$vars['match'] = $segments[2];
+					break;
 			case 'matchdetail':
 					$vars['view'] = 'matchdetail';
 					$vars['show'] = $segments[1];

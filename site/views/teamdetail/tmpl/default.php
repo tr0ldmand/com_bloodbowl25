@@ -277,7 +277,7 @@ if ($this->pop==false)
 <?php 
 if( !empty($this->matches) ) 
 { 
-	echo BloodBowlHelper::showMatchHistory($this->matches);
+	echo BloodBowlHelper::showMatchHistory($this->matches, $this->showteam);
 }
  ?>
 <?php } /* End if show print (pop) */ ?>
